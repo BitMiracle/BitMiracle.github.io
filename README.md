@@ -1,6 +1,4 @@
 LibJpeg.NET 
 -----------
 
-Help pages can be found 
-
-https://BitMiracle.github.io/libjpeg.net/help/
+Help pages can be found [here](https://BitMiracle.github.io/libjpeg.net/help/)
