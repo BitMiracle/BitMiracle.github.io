@@ -1,0 +1,870 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>General notes </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="General notes ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>Our priority was to introduce as little changes into LibTiff&#39;s API as possible. But, as you can imagine, some changes had to be made because of differences between C and C# languages and underlying class libraries. </p>
+<p>Also, we were unable to resist the temptation to rename some methods and types. </p>
+<p>LibTiff prefers unsigned integer types for parameters and return values. LibTiff.Net, by contrast, prefers signed integer types for parameters and return values. You can pass unsigned values or convert return values to unsigned types if you wish, but keep in mind, that it will affect performance (not seriously, though). </p>
+<h2 id="general-notes">General notes</h2>
+<p><strong>TIFF</strong> struct changed it&#39;s name to <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html">Tiff</a> and became full-featured class. </p>
+<p>In LibTiff most functions were accepting pointer to a TIFF struct as first parameter. LibTiff.NET does not need it because these functions are now methods of Tiff class. </p>
+<p><strong>TIFFCodec</strong> struct changed it&#39;s name to <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html">TiffCodec</a> and became full-featured class with virtual methods suitable for overloading. </p>
+<p><strong>TIFFTagMethods</strong> struct changed it&#39;s name to <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffTagMethods.html">TiffTagMethods</a> and became full-featured class with virtual methods suitable for overloading. </p>
+<p><strong>TIFFRegisterCODEC</strong> function changed it&#39;s name and signature. It is now known as <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RegisterCodec_BitMiracle_LibTiff_Classic_TiffCodec_">RegisterCodec(TiffCodec)</a> and gets an instance of class derived from TiffCodec. </p>
+<p>Custom error handling strategy changed. Now you should provide implementation of a class derived from <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffErrorHandler.html">TiffErrorHandler</a> and pass it as parameter to <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetErrorHandler_BitMiracle_LibTiff_Classic_TiffErrorHandler_">SetErrorHandler(TiffErrorHandler)</a> method. </p>
+<p>Custom file/stream handling strategy changed. Now you should provide implementation of a class derived from <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffStream.html">TiffStream</a> and pass it as parameter to <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ClientOpen_System_String_System_String_System_Object_BitMiracle_LibTiff_Classic_TiffStream_">ClientOpen(String, String, Object, TiffStream)</a> method. </p>
+<h2 id="renamings-of-functions">Renamings of functions</h2>
+<table>
+<thead>
+<tr>
+<th>Libtiff name</th>
+<th>LibTiff.Net name / notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIFFGetA</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetA_System_Int32_">GetA(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFGetB</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetB_System_Int32_">GetB(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFGetG</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetG_System_Int32_">GetG(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFGetR</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetR_System_Int32_">GetR(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_cleanup</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_Cleanup">Cleanup()</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_close</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Close">Close()</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_decoderow</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_DecodeRow_System_Byte___System_Int32_System_Int32_System_Int16_">DecodeRow(Byte[], Int32, Int32, Int16)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_decodestrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_DecodeStrip_System_Byte___System_Int32_System_Int32_System_Int16_">DecodeStrip(Byte[], Int32, Int32, Int16)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_decodetile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_DecodeTile_System_Byte___System_Int32_System_Int32_System_Int16_">DecodeTile(Byte[], Int32, Int32, Int16)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_defstripsize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_DefStripSize_System_Int32_">DefStripSize(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_deftilesize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_DefTileSize_System_Int32__System_Int32__">DefTileSize(ref Int32, ref Int32)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_encoderow</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_EncodeRow_">EncodeRow</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_encodestrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_EncodeStrip_">EncodeStrip</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_encodetile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_EncodeTile_">EncodeTile</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_postencode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_PostEncode">PostEncode()</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_predecode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_PreDecode_System_Int16_">PreDecode(Int16)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_preencode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_PreEncode_System_Int16_">PreEncode(Int16)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_seek</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_Seek_System_Int32_">Seek(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_setupdecode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_SetupDecode">SetupDecode()</a></td>
+</tr>
+<tr>
+<td>TIFF.tif_setupencode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_SetupEncode">SetupEncode()</a></td>
+</tr>
+<tr>
+<td>TIFFTagMethods.printdir</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_PrintDirectory_System_IO_Stream_BitMiracle_LibTiff_Classic_TiffPrintFlags_">PrintDirectory(Stream, TiffPrintFlags)</a></td>
+</tr>
+<tr>
+<td>TIFFTagMethods.vgetfield</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetField_">GetField</a></td>
+</tr>
+<tr>
+<td>TIFFTagMethods.vsetfield</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetField_">SetField</a></td>
+</tr>
+<tr>
+<td>_TIFFmemcmp</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Compare_System_Int16___System_Int16___System_Int32_">Compare(Int16[], Int16[], Int32)</a> (for some types, write us if you need another overload.)</td>
+</tr>
+<tr>
+<td>_TIFFmemcpy</td>
+<td>no longer exists</td>
+</tr>
+<tr>
+<td>_TIFFmemset</td>
+<td>no longer exists</td>
+</tr>
+<tr>
+<td>_TIFFrealloc</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Realloc_System_Byte___System_Int32_">Realloc(Byte[], Int32)</a> (for some types, write us if you need another overload.)</td>
+</tr>
+<tr>
+<td>TIFFAccessTagMethods</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetTagMethods">GetTagMethods()</a> (Also added <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetTagMethods_BitMiracle_LibTiff_Classic_TiffTagMethods_">SetTagMethods(TiffTagMethods)</a> in order to retain original abilities TIFFAccessTagMethods)</td>
+</tr>
+<tr>
+<td>TIFFCheckTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CheckTile_System_Int32_System_Int32_System_Int32_System_Int16_">CheckTile(Int32, Int32, Int32, Int16)</a></td>
+</tr>
+<tr>
+<td>TIFFCheckpointDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CheckpointDirectory">CheckpointDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFCleanup</td>
+<td>no longer exists</td>
+</tr>
+<tr>
+<td>TIFFClientOpen</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ClientOpen_">ClientOpen</a></td>
+</tr>
+<tr>
+<td>TIFFClientdata</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Clientdata">Clientdata()</a></td>
+</tr>
+<tr>
+<td>TIFFClose</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Close">Close()</a></td>
+</tr>
+<tr>
+<td>TIFFComputeStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ComputeStrip_">ComputeStrip</a></td>
+</tr>
+<tr>
+<td>TIFFComputeTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ComputeTile_">ComputeTile</a></td>
+</tr>
+<tr>
+<td>TIFFCreateDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CreateDirectory">CreateDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFCurrentDirOffset</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CurrentDirOffset">CurrentDirOffset()</a></td>
+</tr>
+<tr>
+<td>TIFFCurrentDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CurrentDirectory">CurrentDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFCurrentRow</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CurrentRow">CurrentRow()</a></td>
+</tr>
+<tr>
+<td>TIFFCurrentStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CurrentStrip">CurrentStrip()</a></td>
+</tr>
+<tr>
+<td>TIFFCurrentTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_CurrentTile">CurrentTile()</a></td>
+</tr>
+<tr>
+<td>TIFFDataWidth</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_DataWidth_">DataWidth</a></td>
+</tr>
+<tr>
+<td>TIFFDefaultStripSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_DefaultStripSize_System_Int32_">DefaultStripSize(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFDefaultTileSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_DefaultTileSize_System_Int32__System_Int32__">DefaultTileSize(ref Int32, ref Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFError</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Error_System_String_System_String_System_Object___">Error(String, String, Object[])</a> (also added overloaded method <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Error_BitMiracle_LibTiff_Classic_Tiff_System_String_System_String_System_Object___">Error(Tiff, String, String, Object[])</a> that accepts Tiff class instance as first parameter. Please use that overloaded method)</td>
+</tr>
+<tr>
+<td>TIFFErrorExt</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ErrorExt_System_Object_System_String_System_String_System_Object___">ErrorExt(Object, String, String, Object[])</a> (also added overloaded method <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ErrorExt_BitMiracle_LibTiff_Classic_Tiff_System_Object_System_String_System_String_System_Object___">ErrorExt(Tiff, Object, String, String, Object[])</a> that accepts Tiff class instance as first parameter. Please use that overloaded method)</td>
+</tr>
+<tr>
+<td>TIFFExtendProc</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.TiffExtendProc.html">Tiff.TiffExtendProc</a></td>
+</tr>
+<tr>
+<td>TIFFFdOpen</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Open_System_String_System_String_">Open(String, String)</a>)</td>
+</tr>
+<tr>
+<td>TIFFFieldWithName</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FieldWithName_System_String_">FieldWithName(String)</a></td>
+</tr>
+<tr>
+<td>TIFFFieldWithTag</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FieldWithTag_">FieldWithTag</a></td>
+</tr>
+<tr>
+<td>TIFFFileName</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FileName">FileName()</a></td>
+</tr>
+<tr>
+<td>TIFFFileno</td>
+<td>no longer exists</td>
+</tr>
+<tr>
+<td>TIFFFindCODEC</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FindCodec_BitMiracle_LibTiff_Classic_Compression_">FindCodec(Compression)</a></td>
+</tr>
+<tr>
+<td>TIFFFindFieldInfo</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FindFieldInfo_BitMiracle_LibTiff_Classic_TiffTag_BitMiracle_LibTiff_Classic_TiffType_">FindFieldInfo(TiffTag, TiffType)</a></td>
+</tr>
+<tr>
+<td>TIFFFindFieldInfoByName</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FindFieldInfoByName_System_String_BitMiracle_LibTiff_Classic_TiffType_">FindFieldInfoByName(String, TiffType)</a></td>
+</tr>
+<tr>
+<td>TIFFFlush</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Flush">Flush()</a></td>
+</tr>
+<tr>
+<td>TIFFFlushData</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FlushData">FlushData()</a></td>
+</tr>
+<tr>
+<td>TIFFFreeDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FreeDirectory">FreeDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFGetBitRevTable</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetBitRevTable_System_Boolean_">GetBitRevTable(Boolean)</a></td>
+</tr>
+<tr>
+<td>TIFFGetClientInfo</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetClientInfo_System_String_">GetClientInfo(String)</a></td>
+</tr>
+<tr>
+<td>TIFFGetCloseProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFGetConfiguredCODECs</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetConfiguredCodecs">GetConfiguredCodecs()</a></td>
+</tr>
+<tr>
+<td>TIFFGetField</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetField_BitMiracle_LibTiff_Classic_TiffTag_">GetField(TiffTag)</a></td>
+</tr>
+<tr>
+<td>TIFFGetFieldDefaulted</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetFieldDefaulted_BitMiracle_LibTiff_Classic_TiffTag_">GetFieldDefaulted(TiffTag)</a></td>
+</tr>
+<tr>
+<td>TIFFGetMapFileProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFGetMode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetMode">GetMode()</a></td>
+</tr>
+<tr>
+<td>TIFFGetReadProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFGetSeekProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFGetSizeProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFGetTagListCount</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetTagListCount">GetTagListCount()</a></td>
+</tr>
+<tr>
+<td>TIFFGetTagListEntry</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetTagListEntry_System_Int32_">GetTagListEntry(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFGetUnmapFileProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFGetVersion</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetVersion">GetVersion()</a></td>
+</tr>
+<tr>
+<td>TIFFGetWriteProc</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetStream">GetStream()</a>)</td>
+</tr>
+<tr>
+<td>TIFFIsBigEndian</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_IsBigEndian">IsBigEndian()</a></td>
+</tr>
+<tr>
+<td>TIFFIsByteSwapped</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_IsByteSwapped">IsByteSwapped()</a></td>
+</tr>
+<tr>
+<td>TIFFIsCODECConfigured</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_IsCodecConfigured_">IsCodecConfigured</a></td>
+</tr>
+<tr>
+<td>TIFFIsMSB2LSB</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_IsMSB2LSB">IsMSB2LSB()</a></td>
+</tr>
+<tr>
+<td>TIFFIsTiled</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_IsTiled">IsTiled()</a></td>
+</tr>
+<tr>
+<td>TIFFIsUpSampled</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_IsUpSampled">IsUpSampled()</a></td>
+</tr>
+<tr>
+<td>TIFFLastDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_LastDirectory">LastDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFMergeFieldInfo</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_MergeFieldInfo_">MergeFieldInfo</a></td>
+</tr>
+<tr>
+<td>TIFFNumberOfDirectories</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_NumberOfDirectories">NumberOfDirectories()</a></td>
+</tr>
+<tr>
+<td>TIFFNumberOfStrips</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_NumberOfStrips">NumberOfStrips()</a></td>
+</tr>
+<tr>
+<td>TIFFNumberOfTiles</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_NumberOfTiles">NumberOfTiles()</a></td>
+</tr>
+<tr>
+<td>TIFFOpen</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Open_System_String_System_String_">Open(String, String)</a></td>
+</tr>
+<tr>
+<td>TIFFOpenW</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Open_System_String_System_String_">Open(String, String)</a>)</td>
+</tr>
+<tr>
+<td>TIFFPrintDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_PrintDirectory_System_IO_Stream_">PrintDirectory(Stream)</a></td>
+</tr>
+<tr>
+<td>TIFFRGBAImageOK</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RGBAImageOK_System_String__">RGBAImageOK(out String)</a></td>
+</tr>
+<tr>
+<td>TIFFRasterScanlineSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RasterScanlineSize">RasterScanlineSize()</a></td>
+</tr>
+<tr>
+<td>TIFFRawStripSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RawStripSize_System_Int32_">RawStripSize(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFReadBufferSetup</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadBufferSetup_System_Byte___System_Int32_">ReadBufferSetup(Byte[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFReadCustomDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadCustomDirectory_System_Int64_BitMiracle_LibTiff_Classic_TiffFieldInfo___System_Int32_">ReadCustomDirectory(Int64, TiffFieldInfo[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFReadDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadDirectory">ReadDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFReadEXIFDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadEXIFDirectory_System_Int64_">ReadEXIFDirectory(Int64)</a></td>
+</tr>
+<tr>
+<td>TIFFReadEncodedStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadEncodedStrip_System_Int32_System_Byte___System_Int32_System_Int32_">ReadEncodedStrip(Int32, Byte[], Int32, Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFReadEncodedTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadEncodedTile_System_Int32_System_Byte___System_Int32_System_Int32_">ReadEncodedTile(Int32, Byte[], Int32, Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFReadRGBAImage</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRGBAImage_">ReadRGBAImage</a></td>
+</tr>
+<tr>
+<td>TIFFReadRGBAImageOriented</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRGBAImageOriented_">ReadRGBAImageOriented</a></td>
+</tr>
+<tr>
+<td>TIFFReadRGBAStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRGBAStrip_">ReadRGBAStrip</a></td>
+</tr>
+<tr>
+<td>TIFFReadRGBATile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRGBATile_">ReadRGBATile</a></td>
+</tr>
+<tr>
+<td>TIFFReadRawStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRawStrip_">ReadRawStrip</a></td>
+</tr>
+<tr>
+<td>TIFFReadRawTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRawTile_System_Int32_System_Byte___System_Int32_System_Int32_">ReadRawTile(Int32, Byte[], Int32, Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFReadScanline</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadScanline_">ReadScanline</a></td>
+</tr>
+<tr>
+<td>TIFFReadTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadTile_System_Byte___System_Int32_System_Int32_System_Int32_System_Int32_System_Int16_">ReadTile(Byte[], Int32, Int32, Int32, Int32, Int16)</a></td>
+</tr>
+<tr>
+<td>TIFFReassignTagToIgnore</td>
+<td>no longer exists</td>
+</tr>
+<tr>
+<td>TIFFRegisterCODEC</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RegisterCodec_BitMiracle_LibTiff_Classic_TiffCodec_">RegisterCodec(TiffCodec)</a></td>
+</tr>
+<tr>
+<td>TIFFReverseBits</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReverseBits_System_Byte___System_Int32_">ReverseBits(Byte[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFRewriteDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RewriteDirectory">RewriteDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFScanlineSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ScanlineSize">ScanlineSize()</a></td>
+</tr>
+<tr>
+<td>TIFFSetClientInfo</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetClientInfo_System_Object_System_String_">SetClientInfo(Object, String)</a></td>
+</tr>
+<tr>
+<td>TIFFSetClientdata</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetClientdata_System_Object_">SetClientdata(Object)</a></td>
+</tr>
+<tr>
+<td>TIFFSetDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetDirectory_System_Int16_">SetDirectory(Int16)</a></td>
+</tr>
+<tr>
+<td>TIFFSetErrorHandler</td>
+<td>no longer exists (use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetErrorHandler_BitMiracle_LibTiff_Classic_TiffErrorHandler_">SetErrorHandler(TiffErrorHandler)</a> with instance of class derived from <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffErrorHandler.html">TiffErrorHandler</a>)</td>
+</tr>
+<tr>
+<td>TIFFSetErrorHandlerExt</td>
+<td>no longer exists (use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetErrorHandler_BitMiracle_LibTiff_Classic_TiffErrorHandler_">SetErrorHandler(TiffErrorHandler)</a> with instance of class derived from <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffErrorHandler.html">TiffErrorHandler</a>)</td>
+</tr>
+<tr>
+<td>TIFFSetField</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetField_BitMiracle_LibTiff_Classic_TiffTag_System_Object___">SetField(TiffTag, Object[])</a></td>
+</tr>
+<tr>
+<td>TIFFSetFileName</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetFileName_System_String_">SetFileName(String)</a></td>
+</tr>
+<tr>
+<td>TIFFSetFileno</td>
+<td>no longer exists</td>
+</tr>
+<tr>
+<td>TIFFSetMode</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetMode_System_Int32_">SetMode(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFSetSubDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetSubDirectory_System_Int64_">SetSubDirectory(Int64)</a></td>
+</tr>
+<tr>
+<td>TIFFSetTagExtender</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetTagExtender_BitMiracle_LibTiff_Classic_Tiff_TiffExtendProc_">SetTagExtender(Tiff.TiffExtendProc)</a></td>
+</tr>
+<tr>
+<td>TIFFSetWarningHandler</td>
+<td>no longer exists (use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetErrorHandler_BitMiracle_LibTiff_Classic_TiffErrorHandler_">SetErrorHandler(TiffErrorHandler)</a> with instance of class derived from <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffErrorHandler.html">TiffErrorHandler</a>)</td>
+</tr>
+<tr>
+<td>TIFFSetWarningHandlerExt</td>
+<td>no longer exists (use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetErrorHandler_BitMiracle_LibTiff_Classic_TiffErrorHandler_">SetErrorHandler(TiffErrorHandler)</a> with instance of class derived from <a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffErrorHandler.html">TiffErrorHandler</a>)</td>
+</tr>
+<tr>
+<td>TIFFSetWriteOffset</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetWriteOffset_System_Int64_">SetWriteOffset(Int64)</a></td>
+</tr>
+<tr>
+<td>TIFFSetupStrips</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetupStrips">SetupStrips()</a></td>
+</tr>
+<tr>
+<td>TIFFStripSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_StripSize">StripSize()</a></td>
+</tr>
+<tr>
+<td>TIFFSwabArrayOfDouble</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabArrayOfDouble_System_Double___System_Int32_">SwabArrayOfDouble(Double[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFSwabArrayOfLong</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabArrayOfLong_System_Int32___System_Int32_">SwabArrayOfLong(Int32[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFSwabArrayOfShort</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabArrayOfShort_System_Int16___System_Int32_">SwabArrayOfShort(Int16[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFSwabArrayOfTriples</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabArrayOfTriples_">SwabArrayOfTriples</a></td>
+</tr>
+<tr>
+<td>TIFFSwabDouble</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabDouble_System_Double__">SwabDouble(ref Double)</a></td>
+</tr>
+<tr>
+<td>TIFFSwabLong</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabLong_System_Int32__">SwabLong(ref Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFSwabShort</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SwabShort_System_Int16__">SwabShort(ref Int16)</a></td>
+</tr>
+<tr>
+<td>TIFFTileRowSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_TileRowSize">TileRowSize()</a></td>
+</tr>
+<tr>
+<td>TIFFTileSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_TileSize">TileSize()</a></td>
+</tr>
+<tr>
+<td>TIFFUnRegisterCODEC</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_UnRegisterCodec_BitMiracle_LibTiff_Classic_TiffCodec_">UnRegisterCodec(TiffCodec)</a></td>
+</tr>
+<tr>
+<td>TIFFUnlinkDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_UnlinkDirectory_System_Int16_">UnlinkDirectory(Int16)</a></td>
+</tr>
+<tr>
+<td>TIFFVGetField</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetField_BitMiracle_LibTiff_Classic_TiffTag_">GetField(TiffTag)</a>)</td>
+</tr>
+<tr>
+<td>TIFFVGetFieldDefaulted</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetFieldDefaulted_BitMiracle_LibTiff_Classic_TiffTag_">GetFieldDefaulted(TiffTag)</a>)</td>
+</tr>
+<tr>
+<td>TIFFVSetField</td>
+<td>no longer exists (please use <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetField_BitMiracle_LibTiff_Classic_TiffTag_System_Object___">SetField(TiffTag, Object[])</a>)</td>
+</tr>
+<tr>
+<td>TIFFVStripSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_VStripSize_System_Int32_">VStripSize(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFVTileSize</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_VTileSize_System_Int32_">VTileSize(Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFWarning</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Warning_System_String_System_String_System_Object___">Warning(String, String, Object[])</a> (also added overloaded method <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_Warning_BitMiracle_LibTiff_Classic_Tiff_System_String_System_String_System_Object___">Warning(Tiff, String, String, Object[])</a> that accepts Tiff class instance as first parameter. Please use that overloaded method)</td>
+</tr>
+<tr>
+<td>TIFFWarningExt</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WarningExt_System_Object_System_String_System_String_System_Object___">WarningExt(Object, String, String, Object[])</a> (also added overloaded method <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WarningExt_BitMiracle_LibTiff_Classic_Tiff_System_Object_System_String_System_String_System_Object___">WarningExt(Tiff, Object, String, String, Object[])</a> that accepts Tiff class instance as first parameter. Please use that overloaded method)</td>
+</tr>
+<tr>
+<td>TIFFWriteBufferSetup</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteBufferSetup_System_Byte___System_Int32_">WriteBufferSetup(Byte[], Int32)</a></td>
+</tr>
+<tr>
+<td>TIFFWriteCheck</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteCheck_System_Boolean_System_String_">WriteCheck(Boolean, String)</a></td>
+</tr>
+<tr>
+<td>TIFFWriteDirectory</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteDirectory">WriteDirectory()</a></td>
+</tr>
+<tr>
+<td>TIFFWriteEncodedStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteEncodedStrip_">WriteEncodedStrip</a></td>
+</tr>
+<tr>
+<td>TIFFWriteEncodedTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteEncodedTile_">WriteEncodedTile</a></td>
+</tr>
+<tr>
+<td>TIFFWriteRawStrip</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteRawStrip_">WriteRawStrip</a></td>
+</tr>
+<tr>
+<td>TIFFWriteRawTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteRawTile_">WriteRawTile</a></td>
+</tr>
+<tr>
+<td>TIFFWriteScanline</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteScanline_">WriteScanline</a></td>
+</tr>
+<tr>
+<td>TIFFWriteTile</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_WriteTile_">WriteTile</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="renamings-of-constants-and-types">Renamings of constants and types</h2>
+<table>
+<thead>
+<tr>
+<th>Libtiff name</th>
+<th>LibTiff.Net name / notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLEANFAXDATA_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.CleanFaxData.html">CleanFaxData</a>.*</td>
+</tr>
+<tr>
+<td>COLORRESPONSEUNIT_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.ColorResponseUnit.html">ColorResponseUnit</a>.CRU*</td>
+</tr>
+<tr>
+<td>COMPRESSION_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Compression.html">Compression</a>.*</td>
+</tr>
+<tr>
+<td>EXIFTAG_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffTag.html">TiffTag</a>.EXIF_*</td>
+</tr>
+<tr>
+<td>EXTRASAMPLE_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.ExtraSample.html">ExtraSample</a>.*</td>
+</tr>
+<tr>
+<td>FAXMODE_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.FaxMode.html">FaxMode</a>.*</td>
+</tr>
+<tr>
+<td>FILETYPE_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.FileType.html">FileType</a>.*</td>
+</tr>
+<tr>
+<td>FILLORDER_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.FillOrder.html">FillOrder</a>.*</td>
+</tr>
+<tr>
+<td>GRAYRESPONSEUNIT_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.GrayResponseUnit.html">GrayResponseUnit</a>.GRU*</td>
+</tr>
+<tr>
+<td>GROUP3OPT_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Group3Opt.html">Group3Opt</a>.* (note, that GROUP3OPT_2DENCODING renamed to ENCODING2D)</td>
+</tr>
+<tr>
+<td>INKSET_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.InkSet.html">InkSet</a>.*</td>
+</tr>
+<tr>
+<td>JPEGCOLORMODE_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.JpegColorMode.html">JpegColorMode</a>.*</td>
+</tr>
+<tr>
+<td>JPEGPROC_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.JpegProc.html">JpegProc</a>.*</td>
+</tr>
+<tr>
+<td>JPEGTABLESMODE_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.JpegTablesMode.html">JpegTablesMode</a>.*</td>
+</tr>
+<tr>
+<td>OFILETYPE_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.OFileType.html">OFileType</a>.*</td>
+</tr>
+<tr>
+<td>ORIENTATION_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Orientation.html">Orientation</a>.*</td>
+</tr>
+<tr>
+<td>PHOTOMETRIC_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Photometric.html">Photometric</a>.*</td>
+</tr>
+<tr>
+<td>PLANARCONFIG_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.PlanarConfig.html">PlanarConfig</a>.*</td>
+</tr>
+<tr>
+<td>PREDICTOR_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Predictor.html">Predictor</a>.*</td>
+</tr>
+<tr>
+<td>RESUNIT_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.ResUnit.html">ResUnit</a>.*</td>
+</tr>
+<tr>
+<td>SAMPLEFORMAT_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.SampleFormat.html">SampleFormat</a>.*</td>
+</tr>
+<tr>
+<td>THRESHHOLD_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.Threshold.html">Threshold</a>.*</td>
+</tr>
+<tr>
+<td>TIFFPRINT_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffPrintFlags.html">TiffPrintFlags</a>.*</td>
+</tr>
+<tr>
+<td>TIFFTAG_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffTag.html">TiffTag</a>.*</td>
+</tr>
+<tr>
+<td>YCBCRPOSITION_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.YCbCrPosition.html">YCbCrPosition</a>.*</td>
+</tr>
+<tr>
+<td>TIFFDataType.TIFF_*</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffType.html">TiffType</a>.*</td>
+</tr>
+<tr>
+<td>TIFFFieldInfo</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html">TiffFieldInfo</a></td>
+</tr>
+<tr>
+<td>TIFFRGBAImage</td>
+<td><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffRgbaImage.html">TiffRgbaImage</a></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/HelpSrc/articles/differences.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

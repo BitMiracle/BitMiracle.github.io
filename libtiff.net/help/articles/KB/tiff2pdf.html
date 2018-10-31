@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Usage </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Usage ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>Tiff2Pdf converts a TIFF image to a PDF document. </p>
+<h2 id="usage">Usage</h2>
+<p><code>Tiff2Pdf [ options ] input.tiff</code></p>
+<h2 id="description">Description</h2>
+<p>Tiff2Pdf opens a TIFF image and writes a PDF document to standard output. </p>
+<p>The program converts one TIFF file to one PDF file, including multiple page TIFF files, tiled TIFF files, black and white, grayscale, and color TIFF files that contain data of TIFF photometric interpretations of bilevel, grayscale, RGB, YCbCr, CMYK separation, and ICC L*a*b* as supported by LibTiff and PDF. </p>
+<p>If you have multiple TIFF files to convert into one PDF file then use Tiffcp or other program to concatenate the files into a multiple page TIFF file. If the input TIFF file is of huge dimensions (greater than 10000 pixels height or width) convert the input image to a tiled TIFF if it is not already. </p>
+<p>The standard output is standard output. Set the output file name with the <code>−o output.pdf</code> option. </p>
+<p>All black and white files are compressed into a single strip CCITT G4 Fax compressed PDF, unless tiled, where tiled black and white images are compressed into tiled CCITT G4 Fax compressed PDF. </p>
+<p>Color and grayscale data can be compressed using either JPEG compression, ITU-T T.81, or Zip/Deflate LZ77 compression. Set the compression type using the <code>−j</code> or <code>−z</code> options. Use only one or the other of <code>−j</code> and <code>−z</code>. </p>
+<p>If the input TIFF contains single strip CCITT G4 Fax compressed information, then that is written to the PDF file without transcoding, unless the options of no compression and no passthrough are set, <code>−d</code> and <code>−n</code>. </p>
+<p>If the input TIFF contains JPEG or single strip Zip/Deflate compressed information then that is written to the PDF file without transcoding, unless the options of no compression and no passthrough are set. </p>
+<p>The default page size upon which the TIFF image is placed is determined by the resolution and extent of the image data. Default values for the TIFF image resolution can be set using the <code>−x</code> and <code>−y</code> options. The page size can be set using the <code>−p</code> option for paper size, or <code>−w</code> and <code>−l</code> for paper width and length, then each page of the TIFF image is centered on its page. The distance unit for default resolution and page width and length can be set by the <code>−u</code> option, the default unit is inch. </p>
+<p>Various items of the output document information can be set with the <code>−e</code>, <code>−c</code>, <code>−a</code>, <code>−t</code>, <code>−s</code>, and <code>−k</code> options. Setting the argument of the option to &quot;&quot; for these tags causes the relevant document information field to be not written. Some of the document information values otherwise get their information from the input TIFF image, the software, author, document name, and image description. </p>
+<p>The Portable Document Format (PDF) specification is copyrighted by Adobe Systems, Incorporated. </p>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>−o output-file</td>
+<td>Set the output to go to file output-file.</td>
+</tr>
+<tr>
+<td>−j</td>
+<td>Compress with JPEG.</td>
+</tr>
+<tr>
+<td>−z</td>
+<td>Compress with Zip/Deflate.</td>
+</tr>
+<tr>
+<td>−q quality</td>
+<td>Set the compression quality, 1-100 for JPEG.</td>
+</tr>
+<tr>
+<td>−n</td>
+<td>Do not allow data to be converted without uncompressing, no compressed data passthrough.</td>
+</tr>
+<tr>
+<td>−b</td>
+<td>Set PDF &quot;Interpolate&quot; user preference.</td>
+</tr>
+<tr>
+<td>−d</td>
+<td>Do not compress (decompress).</td>
+</tr>
+<tr>
+<td>−i</td>
+<td>Invert colors.</td>
+</tr>
+<tr>
+<td>−p paper-size</td>
+<td>Set paper size, e.g. <code>letter</code>, <code>legal</code>, <code>A4</code>.</td>
+</tr>
+<tr>
+<td>−u [i|m]</td>
+<td>Set distance unit, <code>i</code> for inch, <code>m</code> for centimeter.</td>
+</tr>
+<tr>
+<td>−w width</td>
+<td>Set width in units.</td>
+</tr>
+<tr>
+<td>−l length</td>
+<td>Set length in units.</td>
+</tr>
+<tr>
+<td>−x xres</td>
+<td>Set x/width resolution default.</td>
+</tr>
+<tr>
+<td>−y yres</td>
+<td>Set y/length resolution default.</td>
+</tr>
+<tr>
+<td>−r [d|o]</td>
+<td>Set <code>d</code> for resolution default for images without resolution, <code>o</code> for resolution override for all images.</td>
+</tr>
+<tr>
+<td>−f</td>
+<td>Set PDF &quot;Fit Window&quot; user preference.</td>
+</tr>
+<tr>
+<td>−e YYYYMMDDHHMMSS</td>
+<td>Set document information date, overrides image or current date/time default, YYYYMMDDHHMMSS.</td>
+</tr>
+<tr>
+<td>−c creator</td>
+<td>Set document information creator, overrides image software default.</td>
+</tr>
+<tr>
+<td>−a author</td>
+<td>Set document information author, overrides image artist default.</td>
+</tr>
+<tr>
+<td>−t title</td>
+<td>Set document information title, overrides image document name default.</td>
+</tr>
+<tr>
+<td>−s subject</td>
+<td>Set document information subject, overrides image description default.</td>
+</tr>
+<tr>
+<td>−k keywords</td>
+<td>Set document information keywords.</td>
+</tr>
+<tr>
+<td>−h</td>
+<td>List usage reminder to standard error and exit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>The following example would generate the file output.pdf from input.tiff. </p>
+<p><code>Tiff2Pdf −o output.pdf input.tiff</code></p>
+<p>The following example would generate PDF output from input.tiff and write it to standard output. </p>
+<p><code>Tiff2Pdf input.tiff</code></p>
+<p>The following example would generate the file output.pdf from input.tiff, putting the image pages on a letter sized page, compressing the output with JPEG, with JPEG quality 75, setting the title to &quot;Document&quot;, and setting the &quot;Fit Window&quot; option. </p>
+<p><code>Tiff2Pdf −p letter −j −q 75 −t &quot;Document&quot; −f −o output.pdf input.tiff</code></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/HelpSrc/articles/KB/tiff2pdf.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

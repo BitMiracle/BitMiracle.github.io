@@ -1,0 +1,900 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Work/Bit Miracle/GitHub/LibTiff.Net/HelpSrc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.CleanFaxData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.CleanFaxData.html",
+          "hash": "/KNBH2WpsLpOm9vP/kBF5w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.ColorResponseUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.ColorResponseUnit.html",
+          "hash": "4Eo4SOH1HDhXIDExn9vSSQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Compression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Compression.html",
+          "hash": "I3RuDkzfwPorqOYL4UiaVA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.ExtraSample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.ExtraSample.html",
+          "hash": "YBAPL50+mMyT6TjkWeXRGg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.FaxMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.FaxMode.html",
+          "hash": "zBsqj+sGjJ+UwxlJWE2Naw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.FieldBit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.FieldBit.html",
+          "hash": "wEWMXQwrNqHA9qeTc2Zzrg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.FieldValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.FieldValue.html",
+          "hash": "WlCRduAE7JnjdKhvO8d2ag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.FileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.FileType.html",
+          "hash": "bY+JQ0YJK22UMrKBxq9Jug=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.FillOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.FillOrder.html",
+          "hash": "L+t9GTMWzFz21/2etdKlpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.GrayResponseUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.GrayResponseUnit.html",
+          "hash": "C9XH1sYDtq9oPBP8FhKLVQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Group3Opt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Group3Opt.html",
+          "hash": "23rHSw97ruBcg/dfxiaJnQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.InkSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.InkSet.html",
+          "hash": "jLWOkugCU+dWWXNVEjoTvA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.JpegColorMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.JpegColorMode.html",
+          "hash": "rOhM4Hmf4fRGiBP4Czqpeg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.JpegProc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.JpegProc.html",
+          "hash": "MBbkBafDKnWrifgvkGwCwQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.JpegTablesMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.JpegTablesMode.html",
+          "hash": "9ryTE7t+Yxw8dAbBmRbpkQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.OFileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.OFileType.html",
+          "hash": "qHwiNQ/hbAwJTEL2EYsVsQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Orientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Orientation.html",
+          "hash": "Cepx1HDHiZ43gqrHzQnEaw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Photometric.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Photometric.html",
+          "hash": "WOCUscjKH4HkTrf+kJJqRg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.PlanarConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.PlanarConfig.html",
+          "hash": "Yxn14+Teeocmqtehi9YzTQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Predictor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Predictor.html",
+          "hash": "jCBk4bEGSqrnFOZ3b9cqow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.ResUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.ResUnit.html",
+          "hash": "pPaPM+GysOBtl9vkr+LlrA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.SampleFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.SampleFormat.html",
+          "hash": "U3VGv93UPGmqdGsA5B4tpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Threshold.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Threshold.html",
+          "hash": "Tz4/OlXzqNJXso7ETnCCcg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.FaxFillFunc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.FaxFillFunc.html",
+          "hash": "dQGlIGYmtXInnBfUN5+isQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.TiffExtendProc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.TiffExtendProc.html",
+          "hash": "/W7FBVHjTLppLeNAsf03mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.html",
+          "hash": "L1m0YhAFaCi6Qs4WIW/31w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffCodec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffCodec.html",
+          "hash": "fkVHp+tS/9mRP/I+3iObSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffErrorHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffErrorHandler.html",
+          "hash": "PH/vX/7fJr6MI//wVdJM4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffFieldInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html",
+          "hash": "YA3KgqTmqDj8PHFXFhrgog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffPrintFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffPrintFlags.html",
+          "hash": "DzCsOL+PeHY+c+VEN9Cz6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.GetDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.GetDelegate.html",
+          "hash": "ot7GP4aLpMmh+CvU2YdVFw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.PutContigDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.PutContigDelegate.html",
+          "hash": "xQH8sz/g2ruhtuLPCXp3GQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.PutSeparateDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.PutSeparateDelegate.html",
+          "hash": "WGwTuL+Z7VGIdkv9y1kfUA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffRgbaImage.html",
+          "hash": "6BxjUPL72PPL/ulAzr4jqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffStream.html",
+          "hash": "JdffsL/lBl3sJ7O1keCXcw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffTag.html",
+          "hash": "mzNw2yqRGOuAEwioy06Unw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffTagMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffTagMethods.html",
+          "hash": "XvqGOiM2R+hmw1CEgWKhkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.TiffType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.TiffType.html",
+          "hash": "CTPRoqNCwWsEUDymYCAoCA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.YCbCrPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.YCbCrPosition.html",
+          "hash": "C1rcxbphmBsOU2a8gEdqMw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BitMiracle.LibTiff.Classic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BitMiracle.LibTiff.Classic.html",
+          "hash": "zY9M1LfLhxZz9M1kB2QoVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/RandomTif.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/RandomTif.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/SydneyHarborBridge.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/SydneyHarborBridge.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/SydneyHarborBridgeStrips.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/SydneyHarborBridgeStrips.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/SydneyHarborBridgeTiles.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/SydneyHarborBridgeTiles.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/adding-new-tags.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/adding-new-tags.html",
+          "hash": "zfuAJfnn0HMHnvnxgcQnCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/basic-introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/basic-introduction.html",
+          "hash": "PO5E8VJUMiAoFWCiWh7M+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/black-and-white.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/black-and-white.html",
+          "hash": "pxNm5vaRjNEB9X79B2Yj6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader",
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/building-source.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/building-source.html",
+          "hash": "v7rbYo2QnQqvwtkZu0Gfdw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/full-code.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/full-code.html",
+          "hash": "EM/eoOXsBulorwBhU2+yaw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/getting-started.html",
+          "hash": "aYerPmpaPr3b14F3LC+fbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/grayscale-color.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/grayscale-color.html",
+          "hash": "nynhKPDqi0P8uUj+0jiTLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/picture-200.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/picture-200.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/picture-start.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/picture-start.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/test-images.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/test-images.html",
+          "hash": "N6hdLxzpOJFzWiMHtjto+w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/text-200.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/text-200.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/KB/text-start.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "articles/KB/text-start.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/tiff2pdf.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/tiff2pdf.html",
+          "hash": "bmYaXC6VcDLNko4pDCiFPg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/tiff2rgba.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/tiff2rgba.html",
+          "hash": "Ec/yP/TkuFRVcTRFEmhyyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/tiffcp.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/tiffcp.html",
+          "hash": "pF1Xcp/bUIxJ+CKSKDzRbA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/using-prebuild.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/using-prebuild.html",
+          "hash": "lnbidM0RsYlvb6e/+p7rvg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/KB/well-known-tags.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/KB/well-known-tags.html",
+          "hash": "Qv33R/2pSrkZorgIiN1f6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/differences.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/differences.html",
+          "hash": "EmYeBEdSElgeS8eIm7mbIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/license.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/license.html",
+          "hash": "tJKWwko6DgQIzHb24TZmXg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/links.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/links.html",
+          "hash": "3qKVRBhMxYhyvm+CgeI8SA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/tiff6-coverage.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tiff6-coverage.html",
+          "hash": "GJamMD1+zGZA8TXDkXNhhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/welcome.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/welcome.html",
+          "hash": "FDQXMtACtkOxsPGfjtcRuQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "fusion/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "fusion/toc.html",
+          "hash": "+I/x27TyC1WZgE8EmXAJnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "96JGQfi3LO+lA9fApy/YMw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "HlDKpL3aY1bsZKol8Lp+XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

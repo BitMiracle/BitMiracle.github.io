@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Usage </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Usage ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>TiffCP copies (and possibly converts) a TIFF file. </p>
+<h2 id="usage">Usage</h2>
+<p><code>TiffCP [ options ] src1.tif ... srcN.tif dst.tif</code></p>
+<h2 id="description">Description</h2>
+<p>TiffCP combines one or more files created according to the Tag Image File Format, Revision 6.0 into a single TIFF file. Because the output file may be compressed using a different algorithm than the input files, TiffCP is most often used to convert between different compression schemes. </p>
+<p>By default, TiffCP will copy all the understood tags in a TIFF directory of an input file to the associated directory in the output file. </p>
+<p>TiffCP can be used to reorganize the storage characteristics of data in a file, but it is explicitly intended to not alter or convert the image data content in any way. </p>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>−b image</td>
+<td>Subtract the following monochrome image from all others processed. This can be used to remove a noise bias from a set of images. This bias image is typically an image of noise the camera saw with its shutter closed.</td>
+</tr>
+<tr>
+<td>−B</td>
+<td>Force output to be written with Big-Endian byte order. This option only has an effect when the output file is created or overwritten and not when it is appended to.</td>
+</tr>
+<tr>
+<td>−C</td>
+<td>Suppress the use of &quot;strip chopping&quot; when reading images that have a single strip/tile of uncompressed data.</td>
+</tr>
+<tr>
+<td>−c</td>
+<td>Specify the compression to use for data written to the output file: <code>none</code> for no compression, <code>packbits</code> for PackBits compression, <code>lzw</code> for Lempel-Ziv &amp; Welch compression, <code>jpeg</code> for baseline JPEG compression, <code>zip</code> for Deflate compression, <code>g3</code> for CCITT Group 3 (T.4) compression, and <code>g4</code> for CCITT Group 4 (T.6) compression. By default TiffCP will compress data according to the value of the Compression tag found in the source file.<br><br>The CCITT Group 3 and Group 4 compression algorithms can only be used with bilevel data.<br><br>Group 3 compression can be specified together with several T.4-specific options: <code>1d</code> for 1-dimensional encoding, <code>2d</code> for 2-dimensional encoding, and <code>fill</code> to force each encoded scanline to be zero-filled so that the terminating EOL code lies on a byte boundary. Group 3-specific options are specified by appending a &quot;:&quot;-separated list to the &quot;g3&quot; option; e.g. <code>−c g3:2d:fill</code> to get 2D-encoded data with byte-aligned EOL codes.<br><br>LZW compression can be specified together with a predictor value. A predictor value of <code>2</code> causes each scanline of the output image to undergo horizontal differencing before it is encoded; a value of <code>1</code> forces each scanline to be encoded without differencing. LZW-specific options are specified by appending a &quot;:&quot;-separated list to the &quot;lzw&quot; option; e.g. <code>−c lzw:2</code> for LZW compression with horizontal differencing.</td>
+</tr>
+<tr>
+<td>−f</td>
+<td>Specify the bit fill order to use in writing output data. By default, TiffCP will create a new file with the same fill order as the original. Specifying <code>−f lsb2msb</code> will force data to be written with the FillOrder tag set to LSB2MSB, while <code>−f msb2lsb</code> will force data to be written with the FillOrder tag set to MSB2LSB.</td>
+</tr>
+<tr>
+<td>−i</td>
+<td>Ignore non-fatal read errors and continue processing of the input file.</td>
+</tr>
+<tr>
+<td>−l</td>
+<td>Specify the length of a tile (in pixels). TiffCP attempts to set the tile dimensions so that no more than 8 kilobytes of data appear in a tile.</td>
+</tr>
+<tr>
+<td>−L</td>
+<td>Force output to be written with Little-Endian byte order. This option only has an effect when the output file is created or overwritten and not when it is appended to.</td>
+</tr>
+<tr>
+<td>−p</td>
+<td>Specify the planar configuration to use in writing image data that has one 8-bit sample per pixel. By default, TiffCP will create a new file with the same planar configuration as the original. Specifying <code>−p contig</code> will force data to be written with multi-sample data packed together, while <code>−p separate</code> will force samples to be written in separate planes.</td>
+</tr>
+<tr>
+<td>−r</td>
+<td>Specify the number of rows (scanlines) in each strip of data written to the output file. By default (or when value 0 is specified), TiffCP attempts to set the rows/strip that no more than 8 kilobytes of data appear in a strip. If you specify special value <code>−1</code> it will results in infinite number of the rows per strip. The entire image will be the one strip in that case.</td>
+</tr>
+<tr>
+<td>−s</td>
+<td>Force the output file to be written with data organized in strips (rather than tiles).</td>
+</tr>
+<tr>
+<td>−t</td>
+<td>Force the output file to be written with data organized in tiles (rather than strips).</td>
+</tr>
+<tr>
+<td>−w</td>
+<td>Specify the width of a tile (in pixels). TiffCP attempts to set the tile dimensions so that no more than 8 kilobytes of data appear in a tile.</td>
+</tr>
+<tr>
+<td>−x</td>
+<td>Force the output file to be written with PAGENUMBER value in sequence.</td>
+</tr>
+<tr>
+<td>−,=character</td>
+<td>Substitute character for &quot;,&quot; in parsing image directory indices in files. This is necessary if filenames contain commas. Note that −,= with whitespace immediately following will disable the special meaning of the &quot;,&quot; entirely.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>The following concatenates two files and writes the result using LZW encoding: </p>
+<p><code>tiffcp −c lzw a.tif b.tif result.tif</code></p>
+<p>To convert a G3 1d-encoded TIFF to a single strip of G4-encoded data the following might be used (1000 is just a number that is larger than the number of rows in the source file): </p>
+<p><code>tiffcp −c g4 −r 10000 g3.tif g4.tif</code></p>
+<p>To extract a selected set of images from a multi-image TIFF file, the file name may be immediately followed by a &quot;,&quot; separated list of image directory indices. The first image is always in directory 0. Thus, to copy the 1st and 3rd images of image file &quot;album.tif&quot; to &quot;result.tif&quot;: </p>
+<p><code>tiffcp album.tif,0,2 result.tif</code></p>
+<p>A trailing comma denotes remaining images in sequence. The following command will copy all image with except the first one: </p>
+<p><code>tiffcp album.tif,1, result.tif</code></p>
+<p>Given file &quot;CCD.tif&quot; whose first image is a noise bias followed by images which include that bias, subtract the noise from all those images following it (while decompressing) with the command: </p>
+<p><code>tiffcp −c none −b CCD.tif CCD.tif,1, result.tif</code></p>
+<p>If the file above were named &quot;CCD,X.tif&quot;, the −,= option would be required to correctly parse this filename with image numbers, as follows: </p>
+<p><code>tiffcp −c none −,=% −b CCD,X.tif CCD,X%1%.tif result.tif</code></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/HelpSrc/articles/KB/tiffcp.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

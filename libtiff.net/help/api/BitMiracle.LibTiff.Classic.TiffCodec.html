@@ -1,0 +1,1217 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TiffCodec
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TiffCodec
+   ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BitMiracle.LibTiff.Classic.TiffCodec">
+  
+  
+  <h1 id="BitMiracle_LibTiff_Classic_TiffCodec" data-uid="BitMiracle.LibTiff.Classic.TiffCodec" class="text-break">Class TiffCodec
+  </h1>
+  <div class="markdown level0 summary"><p>Base class for all codecs within the library.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TiffCodec</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BitMiracle.LibTiff.Classic.html">BitMiracle.LibTiff.Classic</a></h6>
+  <h6><strong>Assembly</strong>: BitMiracle.LibTiff.NET.dll</h6>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TiffCodec</code></pre>
+  </div>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+    A codec is a class that implements decoding, encoding, or decoding and encoding of a
+    compression algorithm.
+</p><p>
+The library provides a collection of builtin codecs. More codecs may be registered
+through calls to the library and/or the builtin implementations may be overridden.
+</p></div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec__ctor_BitMiracle_LibTiff_Classic_Tiff_BitMiracle_LibTiff_Classic_Compression_System_String_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.%23ctor(BitMiracle.LibTiff.Classic.Tiff%2CBitMiracle.LibTiff.Classic.Compression%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L39">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec__ctor_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.#ctor*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec__ctor_BitMiracle_LibTiff_Classic_Tiff_BitMiracle_LibTiff_Classic_Compression_System_String_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.#ctor(BitMiracle.LibTiff.Classic.Tiff,BitMiracle.LibTiff.Classic.Compression,System.String)">TiffCodec(Tiff, Compression, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="BitMiracle.LibTiff.Classic.TiffCodec.html">TiffCodec</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TiffCodec(Tiff tif, Compression scheme, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html">Tiff</a></td>
+        <td><span class="parametername">tif</span></td>
+        <td><p>An instance of <a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html">Tiff</a> class.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Compression.html">Compression</a></td>
+        <td><span class="parametername">scheme</span></td>
+        <td><p>The compression scheme for the codec.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the codec.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_m_name.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.m_name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L31">View Source</a>
+  </span>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_m_name" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.m_name">m_name</h4>
+  <div class="markdown level1 summary"><p>Codec name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string m_name</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_m_scheme.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.m_scheme%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L26">View Source</a>
+  </span>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_m_scheme" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.m_scheme">m_scheme</h4>
+  <div class="markdown level1 summary"><p>Compression scheme this codec impelements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Compression m_scheme</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Compression.html">Compression</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_m_tif.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.m_tif%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L21">View Source</a>
+  </span>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_m_tif" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.m_tif">m_tif</h4>
+  <div class="markdown level1 summary"><p>An instance of <a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html">Tiff</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Tiff m_tif</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html">Tiff</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_CanDecode.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.CanDecode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L66">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_CanDecode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.CanDecode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_CanDecode" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.CanDecode">CanDecode</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this codec can decode data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanDecode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this codec can decode data; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_CanEncode.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.CanEncode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L52">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_CanEncode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.CanEncode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_CanEncode" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.CanEncode">CanEncode</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this codec can encode data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanEncode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this codec can encode data; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_Cleanup.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.Cleanup%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L281">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_Cleanup_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Cleanup*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_Cleanup" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Cleanups the state of the codec.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Cleanup()</code></pre>
+  </div>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_Cleanup_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><strong>Cleanup</strong> is called when codec is no longer needed (won&apos;t be used) and can be
+used for example to restore tag methods that were substituted.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_Close.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.Close%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L259">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_Close_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Close*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_Close" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Flushes any internal data buffers and terminates current operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Close()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_DecodeRow_System_Byte___System_Int32_System_Int32_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.DecodeRow(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L124">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_DecodeRow_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DecodeRow*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_DecodeRow_System_Byte___System_Int32_System_Int32_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DecodeRow(System.Byte[],System.Int32,System.Int32,System.Int16)">DecodeRow(Byte[], Int32, Int32, Int16)</h4>
+  <div class="markdown level1 summary"><p>Decodes one row of image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DecodeRow(byte[] buffer, int offset, int count, short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The buffer to place decoded image data to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">buffer</code> at
+which to begin storing decoded bytes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The number of decoded bytes that should be placed
+to <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if image data was decoded successfully; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_DecodeStrip_System_Byte___System_Int32_System_Int32_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.DecodeStrip(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L141">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_DecodeStrip_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DecodeStrip*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_DecodeStrip_System_Byte___System_Int32_System_Int32_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DecodeStrip(System.Byte[],System.Int32,System.Int32,System.Int16)">DecodeStrip(Byte[], Int32, Int32, Int16)</h4>
+  <div class="markdown level1 summary"><p>Decodes one strip of image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DecodeStrip(byte[] buffer, int offset, int count, short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The buffer to place decoded image data to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">buffer</code> at
+which to begin storing decoded bytes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The number of decoded bytes that should be placed
+to <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if image data was decoded successfully; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_DecodeTile_System_Byte___System_Int32_System_Int32_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.DecodeTile(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L158">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_DecodeTile_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DecodeTile*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_DecodeTile_System_Byte___System_Int32_System_Int32_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DecodeTile(System.Byte[],System.Int32,System.Int32,System.Int16)">DecodeTile(Byte[], Int32, Int32, Int16)</h4>
+  <div class="markdown level1 summary"><p>Decodes one tile of image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DecodeTile(byte[] buffer, int offset, int count, short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The buffer to place decoded image data to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">buffer</code> at
+which to begin storing decoded bytes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The number of decoded bytes that should be placed
+to <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if image data was decoded successfully; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_DefStripSize_System_Int32_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.DefStripSize(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L290">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_DefStripSize_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DefStripSize*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_DefStripSize_System_Int32_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DefStripSize(System.Int32)">DefStripSize(Int32)</h4>
+  <div class="markdown level1 summary"><p>Calculates and/or constrains a strip size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int DefStripSize(int size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The proposed strip size (may be zero or negative).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>A strip size to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_DefTileSize_System_Int32__System_Int32__.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.DefTileSize(System.Int32%40%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L313">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_DefTileSize_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DefTileSize*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_DefTileSize_System_Int32__System_Int32__" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.DefTileSize(System.Int32@,System.Int32@)">DefTileSize(ref Int32, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Calculate and/or constrains a tile size</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DefTileSize(ref int width, ref int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>The proposed tile width upon the call / tile width to use after the call.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The proposed tile height upon the call / tile height to use after the call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_EncodeRow_System_Byte___System_Int32_System_Int32_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.EncodeRow(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L217">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_EncodeRow_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.EncodeRow*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_EncodeRow_System_Byte___System_Int32_System_Int32_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.EncodeRow(System.Byte[],System.Int32,System.Int32,System.Int16)">EncodeRow(Byte[], Int32, Int32, Int16)</h4>
+  <div class="markdown level1 summary"><p>Encodes one row of image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool EncodeRow(byte[] buffer, int offset, int count, short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The buffer with image data to be encoded.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">buffer</code> at
+which to begin read image data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The maximum number of encoded bytes that can be placed
+to <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if image data was encoded successfully; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_EncodeStrip_System_Byte___System_Int32_System_Int32_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.EncodeStrip(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L234">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_EncodeStrip_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.EncodeStrip*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_EncodeStrip_System_Byte___System_Int32_System_Int32_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.EncodeStrip(System.Byte[],System.Int32,System.Int32,System.Int16)">EncodeStrip(Byte[], Int32, Int32, Int16)</h4>
+  <div class="markdown level1 summary"><p>Encodes one strip of image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool EncodeStrip(byte[] buffer, int offset, int count, short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The buffer with image data to be encoded.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">buffer</code> at
+which to begin read image data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The maximum number of encoded bytes that can be placed
+to <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if image data was encoded successfully; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_EncodeTile_System_Byte___System_Int32_System_Int32_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.EncodeTile(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L251">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_EncodeTile_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.EncodeTile*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_EncodeTile_System_Byte___System_Int32_System_Int32_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.EncodeTile(System.Byte[],System.Int32,System.Int32,System.Int16)">EncodeTile(Byte[], Int32, Int32, Int16)</h4>
+  <div class="markdown level1 summary"><p>Encodes one tile of image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool EncodeTile(byte[] buffer, int offset, int count, short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The buffer with image data to be encoded.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">buffer</code> at
+which to begin read image data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The maximum number of encoded bytes that can be placed
+to <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if image data was encoded successfully; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_Init.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.Init%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L78">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_Init_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Init*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_Init" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Init">Init()</h4>
+  <div class="markdown level1 summary"><p>Initializes this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Init()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if initialized successfully</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_PostEncode.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.PostEncode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L200">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_PostEncode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.PostEncode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_PostEncode" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.PostEncode">PostEncode()</h4>
+  <div class="markdown level1 summary"><p>Performs any actions after encoding required by the codec.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool PostEncode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if all post-encode actions succeeded; otherwise, <code>false</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_PostEncode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><strong>PostEncode</strong> is called after encoding and can be used to release any external 
+resources needed during encoding.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_PreDecode_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.PreDecode(System.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L107">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_PreDecode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.PreDecode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_PreDecode_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.PreDecode(System.Int16)">PreDecode(Int16)</h4>
+  <div class="markdown level1 summary"><p>Prepares the decoder part of the codec for a decoding.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool PreDecode(short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this codec successfully prepared its decoder part and ready
+    to decode data; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_PreDecode_System_Int16__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><strong>PreDecode</strong> is called after <a class="xref" href="BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_SetupDecode">SetupDecode()</a> and before decoding.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_PreEncode_System_Int16_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.PreEncode(System.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L187">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_PreEncode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.PreEncode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_PreEncode_System_Int16_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.PreEncode(System.Int16)">PreEncode(Int16)</h4>
+  <div class="markdown level1 summary"><p>Prepares the encoder part of the codec for a encoding.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool PreEncode(short plane)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">plane</span></td>
+        <td><p>The zero-based sample plane index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this codec successfully prepared its encoder part and ready
+    to encode data; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_PreEncode_System_Int16__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><strong>PreEncode</strong> is called after <a class="xref" href="BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_SetupEncode">SetupEncode()</a> and before encoding.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_Seek_System_Int32_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.Seek(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L268">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_Seek_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Seek*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_Seek_System_Int32_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.Seek(System.Int32)">Seek(Int32)</h4>
+  <div class="markdown level1 summary"><p>Seeks the specified row in the strip being processed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Seek(int row)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>The row to seek.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if specified row was successfully found; otherwise, <code>false</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_SetupDecode.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.SetupDecode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L93">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_SetupDecode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.SetupDecode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_SetupDecode" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.SetupDecode">SetupDecode()</h4>
+  <div class="markdown level1 summary"><p>Setups the decoder part of the codec.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetupDecode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this codec successfully setup its decoder part and can decode data;
+otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_SetupDecode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><strong>SetupDecode</strong> is called once before
+<a class="xref" href="BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_PreDecode_System_Int16_">PreDecode(Int16)</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec_SetupEncode.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec.SetupEncode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L173">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffCodec_SetupEncode_" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.SetupEncode*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffCodec_SetupEncode" data-uid="BitMiracle.LibTiff.Classic.TiffCodec.SetupEncode">SetupEncode()</h4>
+  <div class="markdown level1 summary"><p>Setups the encoder part of the codec.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetupEncode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this codec successfully setup its encoder part and can encode data;
+otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffCodec_SetupEncode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><strong>SetupEncode</strong> is called once before
+<a class="xref" href="BitMiracle.LibTiff.Classic.TiffCodec.html#BitMiracle_LibTiff_Classic_TiffCodec_PreEncode_System_Int16_">PreEncode(Int16)</a>.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffCodec.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffCodec%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffCodec.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

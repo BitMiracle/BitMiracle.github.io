@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TiffFieldInfo </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="TiffFieldInfo ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>LibTiff.Net has built-in knowledge of all the standard TIFF tags, as well as extentions. The following describes how application specific tags can be used by applications without modifying LibTiff.Net. </p>
+<h2 id="tifffieldinfo">TiffFieldInfo</h2>
+<p>How LibTiff.Net manages specific tags is primarily controlled by the definition for that tag value stored internally as a TiffFieldInfo structure. Please consult documetation for <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html">TiffFieldInfo</a> for more details about members of this structure. </p>
+<p>A TiffFieldInfo definition exists for each built-in tag in the Tiff_DirInfo.cs file. Some tags which support multiple data types have more than one definition, one per data type supported. </p>
+<p>Two methods exist for getting the internal TiffFieldInfo definitions: <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FindFieldInfo_BitMiracle_LibTiff_Classic_TiffTag_BitMiracle_LibTiff_Classic_TiffType_">FindFieldInfo(TiffTag, TiffType)</a> and <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_FindFieldInfoByName_System_String_BitMiracle_LibTiff_Classic_TiffType_">FindFieldInfoByName(String, TiffType)</a>. </p>
+<h2 id="default-tag-auto-registration">Default Tag Auto-registration</h2>
+<p>LibTiff.Net reads unrecognised tags automatically. When an unknown tags is encountered, it is automatically internally defined with a default name and a type derived from the tag value in the file. Applications only need to predefine application specific tags if they need to be able to set them in a file, or if particular calling conventions are desired for <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetField_BitMiracle_LibTiff_Classic_TiffTag_">GetField(TiffTag)</a> and <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetField_BitMiracle_LibTiff_Classic_TiffTag_System_Object___">SetField(TiffTag, Object[])</a>. </p>
+<p>When tags are autodefined like this the <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html#BitMiracle_LibTiff_Classic_TiffFieldInfo_ReadCount">ReadCount</a> and <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html#BitMiracle_LibTiff_Classic_TiffFieldInfo_WriteCount">WriteCount</a> are always <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html#BitMiracle_LibTiff_Classic_TiffFieldInfo_Variable2">Variable2</a>. The <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html#BitMiracle_LibTiff_Classic_TiffFieldInfo_PassCount">PassCount</a> is always true, and the <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.TiffFieldInfo.html#BitMiracle_LibTiff_Classic_TiffFieldInfo_Bit">Bit</a> is <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.FieldBit.html#BitMiracle_LibTiff_Classic_FieldBit_Custom">Custom</a>. The field name will be &quot;Tag {0}&quot; where the {0} is the tag number. </p>
+<h2 id="defining-application-tags">Defining Application Tags</h2>
+<p>For various reasons, it is common for applications to want to define their own tags to store information outside the core TIFF specification. This is done by calling <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_MergeFieldInfo_BitMiracle_LibTiff_Classic_TiffFieldInfo___System_Int32_">MergeFieldInfo(TiffFieldInfo[], Int32)</a> with one or more TiffFieldInfo objects. </p>
+<p>The tags need to be defined for each TIFF file opened - and when reading they should be defined before the tags of the file are read, yet a valid TIFF object is needed to merge the tags against. In order to get them registered at the appropriate part of the setup process, it is necessary to register our merge function as an extender callback with LibTiff.Net. This is done with <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetTagExtender_BitMiracle_LibTiff_Classic_Tiff_TiffExtendProc_">SetTagExtender(Tiff.TiffExtendProc)</a>. It&#39;s a good idea to keep track of the previous tag extender (if any) so that we can call it from our extender allowing a chain of customizations to take effect. </p>
+<p>The whole process is performed in following sample: </p>
+<pre><code class="lang-cs">using BitMiracle.LibTiff.Classic;
+using System.Diagnostics;
+
+namespace ReadWriteCustomTags
+{
+    class Program
+    {
+        private const TiffTag TIFFTAG_ASCIITAG = (TiffTag)666;
+        private const TiffTag TIFFTAG_LONGTAG = (TiffTag)667;
+        private const TiffTag TIFFTAG_SHORTTAG = (TiffTag)668;
+        private const TiffTag TIFFTAG_RATIONALTAG = (TiffTag)669;
+        private const TiffTag TIFFTAG_FLOATTAG = (TiffTag)670;
+        private const TiffTag TIFFTAG_DOUBLETAG = (TiffTag)671;
+        private const TiffTag TIFFTAG_BYTE = (TiffTag)672;
+
+        private static Tiff.TiffExtendProc m_parentExtender;
+
+        public static void TagExtender(Tiff tif)
+        {
+            TiffFieldInfo[] tiffFieldInfo = 
+            {
+                new TiffFieldInfo(TIFFTAG_ASCIITAG, -1, -1, TiffType.ASCII, FieldBit.Custom, true, false, &quot;MyTag&quot;),
+                new TiffFieldInfo(TIFFTAG_SHORTTAG, 2, 2, TiffType.SHORT, FieldBit.Custom, false, true, &quot;ShortTag&quot;),
+                new TiffFieldInfo(TIFFTAG_LONGTAG, 2, 2, TiffType.LONG, FieldBit.Custom, false, true, &quot;LongTag&quot;),
+                new TiffFieldInfo(TIFFTAG_RATIONALTAG, 2, 2, TiffType.RATIONAL, FieldBit.Custom, false, true, &quot;RationalTag&quot;),
+                new TiffFieldInfo(TIFFTAG_FLOATTAG, 2, 2, TiffType.FLOAT, FieldBit.Custom, false, true, &quot;FloatTag&quot;),
+                new TiffFieldInfo(TIFFTAG_DOUBLETAG, 2, 2, TiffType.DOUBLE, FieldBit.Custom, false, true, &quot;DoubleTag&quot;),
+                new TiffFieldInfo(TIFFTAG_BYTE, 2, 2, TiffType.BYTE, FieldBit.Custom, false, true, &quot;ByteTag&quot;),
+            };
+
+            tif.MergeFieldInfo(tiffFieldInfo, tiffFieldInfo.Length);
+
+            if (m_parentExtender != null)
+                m_parentExtender(tif);
+        }
+
+        static void Main(string[] args)
+        {
+            // Define an image
+            byte[] buffer = new byte[25 * 144];
+
+            // Register the custom tag handler
+            Tiff.TiffExtendProc extender = TagExtender;
+            m_parentExtender = Tiff.SetTagExtender(extender);
+
+            string outputFileName = &quot;output.tif&quot;;
+            Tiff image = Tiff.Open(outputFileName, &quot;w&quot;);
+
+            // We need to set some values for basic tags before we can add any data
+            image.SetField(TiffTag.IMAGEWIDTH, 25 * 8);
+            image.SetField(TiffTag.IMAGELENGTH, 144);
+            image.SetField(TiffTag.BITSPERSAMPLE, 1);
+            image.SetField(TiffTag.SAMPLESPERPIXEL, 1);
+            image.SetField(TiffTag.ROWSPERSTRIP, 144);
+
+            image.SetField(TiffTag.COMPRESSION, Compression.CCITTFAX4);
+            image.SetField(TiffTag.PHOTOMETRIC, Photometric.MINISWHITE);
+            image.SetField(TiffTag.FILLORDER, FillOrder.MSB2LSB);
+            image.SetField(TiffTag.PLANARCONFIG, PlanarConfig.CONTIG);
+
+            image.SetField(TiffTag.XRESOLUTION, 150.0);
+            image.SetField(TiffTag.YRESOLUTION, 150.0);
+            image.SetField(TiffTag.RESOLUTIONUNIT, ResUnit.INCH);
+
+            // set custom tags
+
+            string value = &quot;Tag contents&quot;;
+            image.SetField(TIFFTAG_ASCIITAG, value);
+
+            short[] shorts = { 263, 264 };
+            image.SetField(TIFFTAG_SHORTTAG, 2, shorts);
+
+            int[] longs = { 117, 118 };
+            image.SetField(TIFFTAG_LONGTAG, 2, longs);
+
+            float[] rationals = { 0.333333f, 0.444444f };
+            image.SetField(TIFFTAG_RATIONALTAG, 2, rationals);
+
+            float[] floats = { 0.666666f, 0.777777f };
+            image.SetField(TIFFTAG_FLOATTAG, 2, floats);
+
+            double[] doubles = { 0.1234567, 0.7654321 };
+            image.SetField(TIFFTAG_DOUBLETAG, 2, doubles);
+
+            byte[] bytes = { 89, 90 };
+            image.SetField(TIFFTAG_BYTE, 2, bytes);
+
+            // Write the information to the file
+            image.WriteEncodedStrip(0, buffer, 25 * 144);
+
+            // Close the file
+            image.Dispose();
+
+            // Now open that TIFF back and read new tags
+            image = Tiff.Open(outputFileName, &quot;r&quot;);
+            FieldValue[] res = image.GetField(TIFFTAG_ASCIITAG);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 1);
+            Debug.Assert(res[0].ToString() == value);
+
+            res = image.GetField(TIFFTAG_SHORTTAG);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 2);
+            Debug.Assert(res[0].ToInt() == 2);
+            Debug.Assert(res[1].ToShortArray() != null);
+
+            res = image.GetField(TIFFTAG_LONGTAG);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 2);
+            Debug.Assert(res[0].ToInt() == 2);
+            Debug.Assert(res[1].ToIntArray() != null);
+
+            res = image.GetField(TIFFTAG_RATIONALTAG);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 2);
+            Debug.Assert(res[0].ToInt() == 2);
+            Debug.Assert(res[1].ToFloatArray() != null);
+
+            res = image.GetField(TIFFTAG_FLOATTAG);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 2);
+            Debug.Assert(res[0].ToInt() == 2);
+            Debug.Assert(res[1].ToFloatArray() != null);
+
+            res = image.GetField(TIFFTAG_DOUBLETAG);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 2);
+            Debug.Assert(res[0].ToInt() == 2);
+            Debug.Assert(res[1].ToDoubleArray() != null);
+
+            res = image.GetField(TIFFTAG_BYTE);
+            Debug.Assert(res != null);
+            Debug.Assert(res.Length == 2);
+            Debug.Assert(res[0].ToInt() == 2);
+            Debug.Assert(res[1].ToByteArray() != null);
+
+            image.Dispose();
+        }
+    }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/HelpSrc/articles/KB/adding-new-tags.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

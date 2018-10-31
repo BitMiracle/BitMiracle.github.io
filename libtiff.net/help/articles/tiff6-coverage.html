@@ -1,0 +1,597 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Core requirements </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Core requirements ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>The library is capable of dealing with images that are written to follow the 5.0 or 6.0 TIFF spec. There is also considerable support for some of the more esoteric portions of the 6.0 TIFF spec. </p>
+<h2 id="core-requirements">Core requirements</h2>
+<p>Both &quot;MM&quot; and &quot;II&quot; (big-endian and little-endian) byte orders are handled. Both packed and separated planar configuration of samples. Any number of samples per pixel (memory permitting). Any image width and height (memory permitting). Multiple subfiles can be read and written. Editing is not supported in that related subfiles (i.e. a reduced resolution version of an image) and they are not automatically updated. </p>
+<p>Tags handled: </p>
+<ul>
+<li><a class="xref" href="../api/BitMiracle.LibTiff.Classic.TiffTag.html">TiffTag</a>.EXTRASAMPLES </li>
+<li>TiffTag.IMAGEWIDTH</li>
+<li>TiffTag.IMAGELENGTH</li>
+<li>TiffTag.SUBFILETYPE</li>
+<li>TiffTag.RESOLUTIONUNIT</li>
+<li>TiffTag.ROWSPERSTRIP</li>
+<li>TiffTag.STRIPOFFSETS</li>
+<li>TiffTag.STRIPBYTECOUNTS</li>
+<li>TiffTag.XRESOLUTION</li>
+<li>TiffTag.YRESOLUTION</li>
+</ul>
+<h2 id="tiled-images">Tiled Images</h2>
+<ul>
+<li>TiffTag.TILEWIDTH</li>
+<li>TiffTag.TILELENGTH</li>
+<li>TiffTag.TILEOFFSETS</li>
+<li>TiffTag.TILEBYTECOUNTS</li>
+</ul>
+<h2 id="image-colorimetry-information">Image Colorimetry Information</h2>
+<ul>
+<li>TiffTag.WHITEPOINT</li>
+<li>TiffTag.PRIMARYCHROMATICITIES</li>
+<li>TiffTag.TRANSFERFUNCTION</li>
+<li>TiffTag.REFERENCEBLACKWHITE</li>
+</ul>
+<h2 id="class-b-for-bilevel-images">Class B for bilevel images</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 1</li>
+<li>TiffTag.BITSPERSAMPLE = 1</li>
+<li>TiffTag.COMPRESSION = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Compression.html">Compression</a>.NONE, Compression.CCITTRLE, or Compression.PACKBITS </li>
+<li>TiffTag.PHOTOMETRIC = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Photometric.html">Photometric</a>.MINISWHITE, Photometric.MINISBLACK </li>
+</ul>
+<h2 id="class-g-for-grayscale-images">Class G for grayscale images</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 1</li>
+<li>TiffTag.BITSPERSAMPLE = 4, 8</li>
+<li>TiffTag.COMPRESSION = Compression.NONE, Compression.LZW</li>
+<li>TiffTag.PHOTOMETRIC = Photometric.MINISWHITE, Photometric.MINISBLACK</li>
+</ul>
+<h2 id="class-p-for-palette-color-images">Class P for palette color images</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 1</li>
+<li>TiffTag.BITSPERSAMPLE = 1-8</li>
+<li>TiffTag.COMPRESSION = Compression.NONE, Compression.LZW</li>
+<li>TiffTag.PHOTOMETRIC = Photometric.PALETTE</li>
+<li>TiffTag.COLORMAP</li>
+</ul>
+<h2 id="class-r-for-rgb-full-color-images">Class R for RGB full color images</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 3</li>
+<li>TiffTag.BITSPERSAMPLE = &lt;8, 8, 8&gt;</li>
+<li>TiffTag.PLANARCONFIG = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.PlanarConfig.html">PlanarConfig</a>.CONTIG, PlanarConfig.SEPARATE </li>
+<li>TiffTag.COMPRESSION = Compression.NONE, Compression.LZW</li>
+<li>TiffTag.PHOTOMETRIC = Photometric.RGB</li>
+</ul>
+<h2 id="class-f-for-facsimile">Class F for facsimile</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 1</li>
+<li>TiffTag.BITSPERSAMPLE = 1</li>
+<li>TiffTag.COMPRESSION = Compression.NONE, Compression.CCITTRLE, Compression.PACKBITS, Compression.CCITTFAX3 (Compression.CCITT_T4), Compression.CCITTFAX4 (Compression.CCITT_T6)</li>
+<li>TiffTag.PHOTOMETRIC = Photometric.MINISWHITE, Photometric.MINISBLACK</li>
+<li>TiffTag.GROUP3OPTIONS (TiffTag.T4OPTIONS) = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Group3Opt.html">Group3Opt</a>.* </li>
+<li>TiffTag.GROUP4OPTIONS (TiffTag.T6OPTIONS)</li>
+<li>TiffTag.FAXFILLFUNC = instance of <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.FaxFillFunc.html">Tiff.FaxFillFunc</a></li>
+<li>TiffTag.PAGENUMBER</li>
+<li>TiffTag.XRESOLUTION</li>
+<li>TiffTag.YRESOLUTION</li>
+<li>TiffTag.SOFTWARE</li>
+<li>TiffTag.BADFAXLINES</li>
+<li>TiffTag.CLEANFAXDATA = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.CleanFaxData.html">CleanFaxData</a>.* </li>
+<li>TiffTag.CONSECUTIVEBADFAXLINES</li>
+<li>TiffTag.DATETIME</li>
+<li>TiffTag.DOCUMENTNAME</li>
+<li>TiffTag.IMAGEDESCRIPTION</li>
+<li>TiffTag.ORIENTATION = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Orientation.html">Orientation</a>.* </li>
+</ul>
+<h2 id="class-s-for-separated-images">Class S for separated images</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 4</li>
+<li>TiffTag.PLANARCONFIG = PlanarConfig.CONTIG, PlanarConfig.SEPARATE</li>
+<li>TiffTag.COMPRESSION = Compression.NONE, Compression.LZW</li>
+<li>TiffTag.PHOTOMETRIC = Photometric.SEPARATED</li>
+<li>TiffTag.INKSET = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.InkSet.html">InkSet</a>.CMYK </li>
+<li>TiffTag.DOTRANGE</li>
+<li>TiffTag.INKNAMES</li>
+<li>TiffTag.NUMBEROFINKS</li>
+<li>TiffTag.TARGETPRINTER</li>
+</ul>
+<h2 id="class-y-for-ycbcr-images">Class Y for YCbCr images</h2>
+<ul>
+<li>TiffTag.SAMPLESPERPIXEL = 3</li>
+<li>TiffTag.BITSPERSAMPLE = &lt;8, 8, 8&gt;</li>
+<li>TiffTag.PLANARCONFIG = PlanarConfig.CONTIG, PlanarConfig.SEPARATE</li>
+<li>TiffTag.COMPRESSION = Compression.NONE, Compression.LZW, Compression.JPEG</li>
+<li>TiffTag.PHOTOMETRIC = Photometric.YCBCR</li>
+<li>TiffTag.YCBCRCOEFFICIENTS</li>
+<li>TiffTag.YCBCRSUBSAMPLING</li>
+<li>TiffTag.YCBCRPOSITIONING = <a class="xref" href="../api/BitMiracle.LibTiff.Classic.YCbCrPosition.html">YCbCrPosition</a>.* </li>
+<li>colorimetry info from TIFF Specification, revision 6.0 Appendix H (see <a href="links.html">Links to Resources</a>) </li>
+</ul>
+<h2 id="class-jpeg-for-jpeg-images-per-tiff-technical-note-2">Class &quot;JPEG&quot; for JPEG images (per TIFF Technical Note #2)</h2>
+<ul>
+<li>TiffTag.PHOTOMETRIC = Photometric.MINISBLACK, Photometric.RGB, Photometric.SEPARATED, or Photometric.YCBCR</li>
+<li>Class Y tags if TiffTag.PHOTOMETRIC = Photometric.YCBCR</li>
+<li>Class S tags if TiffTag.PHOTOMETRIC = Photometric.SEPARATED</li>
+<li>TiffTag.COMPRESSION = Compression.JPEG</li>
+</ul>
+<p>JPEG support is based on the post-6.0 proposal given in TIFF Technical Note #2 (see <a href="links.html">Links to Resources</a>) which defines a revised JPEG-in-TIFF scheme (revised over that appendix that was part of the TIFF 6.0 specification). In addition, the library supports PKZIP-style Deflate encoding (Compression.DEFLATE) and Old-style JPEG encoding (as defined in the 6.0 specification, Compression.OJPEG) in read-only mode. </p>
+<p>The following table shows the tags that are recognized and how they are used by the library. If no use is indicated, then the library reads and writes the tag, but does not use it internally. </p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>R/W</th>
+<th>Library&#39;s Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TiffTag.SUBFILETYPE</td>
+<td>R/W</td>
+<td>none</td>
+</tr>
+<tr>
+<td>TiffTag.OSUBFILETYPE</td>
+<td>R/W</td>
+<td>none</td>
+</tr>
+<tr>
+<td>TiffTag.IMAGEWIDTH</td>
+<td>R/W</td>
+<td>lots</td>
+</tr>
+<tr>
+<td>TiffTag.IMAGELENGTH</td>
+<td>R/W</td>
+<td>lots</td>
+</tr>
+<tr>
+<td>TiffTag.BITSPERSAMPLE</td>
+<td>R/W</td>
+<td>lots</td>
+</tr>
+<tr>
+<td>TiffTag.COMPRESSION</td>
+<td>R/W</td>
+<td>to select appropriate codec</td>
+</tr>
+<tr>
+<td>TiffTag.PHOTOMETRIC</td>
+<td>R/W</td>
+<td>lots</td>
+</tr>
+<tr>
+<td>TiffTag.THRESHHOLDING</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.CELLWIDTH</td>
+<td></td>
+<td>parsed but ignored</td>
+</tr>
+<tr>
+<td>TiffTag.CELLLENGTH</td>
+<td></td>
+<td>parsed but ignored</td>
+</tr>
+<tr>
+<td>TiffTag.FILLORDER</td>
+<td>R/W</td>
+<td>control bit order</td>
+</tr>
+<tr>
+<td>TiffTag.DOCUMENTNAME</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.IMAGEDESCRIPTION</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MAKE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MODEL</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.STRIPOFFSETS</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.ORIENTATION</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SAMPLESPERPIXEL</td>
+<td>R/W</td>
+<td>lots</td>
+</tr>
+<tr>
+<td>TiffTag.ROWSPERSTRIP</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.STRIPBYTECOUNTS</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.MINSAMPLEVALUE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MAXSAMPLEVALUE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.XRESOLUTION</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.YRESOLUTION</td>
+<td>R/W</td>
+<td>used by Group 3 2d encoder</td>
+</tr>
+<tr>
+<td>TiffTag.PLANARCONFIG</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.PAGENAME</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.XPOSITION</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.YPOSITION</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.FREEOFFSETS</td>
+<td>parsed but ignored</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.FREEBYTECOUNTS</td>
+<td>parsed but ignored</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.GRAYRESPONSEUNIT</td>
+<td>parsed but ignored</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.GRAYRESPONSECURVE</td>
+<td>parsed but ignored</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.GROUP3OPTIONS</td>
+<td>R/W</td>
+<td>used by Group 3 codec</td>
+</tr>
+<tr>
+<td>TiffTag.GROUP4OPTIONS</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.RESOLUTIONUNIT</td>
+<td>R/W</td>
+<td>used by Group 3 2d encoder</td>
+</tr>
+<tr>
+<td>TiffTag.PAGENUMBER</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.COLORRESPONSEUNIT</td>
+<td>parsed but ignored</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.TRANSFERFUNCTION</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SOFTWARE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.DATETIME</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.ARTIST</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.HOSTCOMPUTER</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.PREDICTOR</td>
+<td>R/W</td>
+<td>used by LZW codec</td>
+</tr>
+<tr>
+<td>TiffTag.WHITEPOINT</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.PRIMARYCHROMATICITIES</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.COLORMAP</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.TILEWIDTH</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.TILELENGTH</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.TILEOFFSETS</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.TILEBYTECOUNTS</td>
+<td>R/W</td>
+<td>data i/o</td>
+</tr>
+<tr>
+<td>TiffTag.BADFAXLINES</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.CLEANFAXDATA</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.CONSECUTIVEBADFAXLINES</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SUBIFD</td>
+<td>R/W</td>
+<td>subimage descriptor support</td>
+</tr>
+<tr>
+<td>TiffTag.INKSET</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.INKNAMES</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.DOTRANGE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.TARGETPRINTER</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.EXTRASAMPLES</td>
+<td>R/W</td>
+<td>lots</td>
+</tr>
+<tr>
+<td>TiffTag.SAMPLEFORMAT</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SMINSAMPLEVALUE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SMAXSAMPLEVALUE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.JPEGTABLES</td>
+<td>R/W</td>
+<td>used by JPEG codec</td>
+</tr>
+<tr>
+<td>TiffTag.YCBCRCOEFFICIENTS</td>
+<td>R/W</td>
+<td>used by <a class="xref" href="../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_ReadRGBAImage_">ReadRGBAImage</a> support</td>
+</tr>
+<tr>
+<td>TiffTag.YCBCRSUBSAMPLING</td>
+<td>R/W</td>
+<td>tile/strip size calculations</td>
+</tr>
+<tr>
+<td>TiffTag.YCBCRPOSITIONING</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.REFERENCEBLACKWHITE</td>
+<td>R/W</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MATTEING</td>
+<td>R</td>
+<td>none (obsoleted by TiffTag.EXTRASAMPLES)</td>
+</tr>
+<tr>
+<td>TiffTag.DATATYPE</td>
+<td>R</td>
+<td>none (obsoleted by TiffTag.SAMPLEFORMAT)</td>
+</tr>
+<tr>
+<td>TiffTag.IMAGEDEPTH</td>
+<td>R/W</td>
+<td>tile/strip calculations</td>
+</tr>
+<tr>
+<td>TiffTag.TILEDEPTH</td>
+<td>R/W</td>
+<td>tile/strip calculations</td>
+</tr>
+<tr>
+<td>TiffTag.STONITS</td>
+<td>R/W</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The TiffTag.MATTEING and TiffTag.DATATYPE have been obsoleted by the 6.0 TiffTag.EXTRASAMPLES and TiffTag.SAMPLEFORMAT tags. Consult the documentation on the ExtraSample.ASSOCALPHA for elaboration. Note, however, that if you use ExtraSample.ASSOCALPHA, you are expected to save data that is pre-multipled by Alpha. If this means nothing to you, check out Porter and Duff&#39;s paper in the &#39;84 SIGGRAPH proceedings: &quot;Compositing Digital Images&quot;. </p>
+<p>The TiffTag.IMAGEDEPTH is a non-standard, but registered tag that specifies the Z-dimension of volumetric data. The combination of TiffTag.IMAGEWIDTH, TiffTag.IMAGELENGTH, and TiffTag.IMAGEDEPTH, defines a 3D volume of pixels that are further specified by TiffTag.BITSPERSAMPLE and TiffTag.SAMPLESPERPIXEL. The TiffTag.TILEDEPTH (also non-standard, but registered) can be used to specified a subvolume &quot;tiling&quot; of a volume of data. </p>
+<p>The Colorimetry, and CMYK tags are additions that appear in TIFF 6.0. Consult the TIFF 6.0 specification referenced in <a href="links.html">Links to Resources</a>. </p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/HelpSrc/articles/tiff6-coverage.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

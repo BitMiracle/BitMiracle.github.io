@@ -1,0 +1,757 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TiffRgbaImage
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TiffRgbaImage
+   ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage">
+  
+  
+  <h1 id="BitMiracle_LibTiff_Classic_TiffRgbaImage" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage" class="text-break">Class TiffRgbaImage
+  </h1>
+  <div class="markdown level0 summary"><p>RGBA-style image support. Provides methods for decoding images into RGBA (or other) format.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TiffRgbaImage</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BitMiracle.LibTiff.Classic.html">BitMiracle.LibTiff.Classic</a></h6>
+  <h6><strong>Assembly</strong>: BitMiracle.LibTiff.NET.dll</h6>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TiffRgbaImage</code></pre>
+  </div>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+<strong>TiffRgbaImage</strong> provide a high-level interface through which TIFF images may be read
+into memory. Images may be strip- or tile-based and have a variety of different
+characteristics: bits/sample, samples/pixel, photometric, etc. The target raster format
+can be customized to a particular application&apos;s needs by installing custom methods that
+manipulate image data according to application requirements.
+</p><p>
+The default usage for this class: check if an image can be processed using
+<a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_RGBAImageOK_System_String__">RGBAImageOK(out String)</a>, construct an instance of
+<strong>TiffRgbaImage</strong> using <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_Create_BitMiracle_LibTiff_Classic_Tiff_System_Boolean_System_String__">Create(Tiff, Boolean, out String)</a> and then read and decode an image into a
+target raster using <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_">GetRaster(Int32[], Int32, Int32, Int32)</a>. <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_">GetRaster(Int32[], Int32, Int32, Int32)</a> can be called
+multiple times to decode an image using different state parameters. If multiple images
+are to be displayed and there is not enough space for each of the decoded rasters,
+multiple instances of <strong>TiffRgbaImage</strong> can be managed and then calls can be made to
+<a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_">GetRaster(Int32[], Int32, Int32, Int32)</a> as needed to display an image.</p>
+<p>
+To use the core support for reading and processing TIFF images, but write the resulting
+raster data in a different format one need only override the &quot;put methods&quot; used to store
+raster data. These methods are initially setup by <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_Create_BitMiracle_LibTiff_Classic_Tiff_System_Boolean_System_String__">Create(Tiff, Boolean, out String)</a> to point to methods
+that pack raster data in the default ABGR pixel format. Two different methods are used
+according to the physical organization of the image data in the file: one for
+<a class="xref" href="BitMiracle.LibTiff.Classic.TiffTag.html#BitMiracle_LibTiff_Classic_TiffTag_PLANARCONFIG">PLANARCONFIG</a> = <a class="xref" href="BitMiracle.LibTiff.Classic.PlanarConfig.html">PlanarConfig</a>.CONTIG (packed samples),
+and another for <a class="xref" href="BitMiracle.LibTiff.Classic.TiffTag.html#BitMiracle_LibTiff_Classic_TiffTag_PLANARCONFIG">PLANARCONFIG</a> = <a class="xref" href="BitMiracle.LibTiff.Classic.PlanarConfig.html">PlanarConfig</a>.SEPARATE
+(separated samples). Note that this mechanism can be used to transform the data before 
+storing it in the raster. For example one can convert data to colormap indices for display
+on a colormap display.</p><p>
+To setup custom &quot;put&quot; method please use <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_PutContig">PutContig</a> property for contiguously
+packed samples and/or <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_PutSeparate">PutSeparate</a> property for separated samples.</p>
+<p>
+The methods of <strong>TiffRgbaImage</strong> support the most commonly encountered flavors of TIFF.
+It is possible to extend this support by overriding the &quot;get method&quot; invoked by
+<a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_">GetRaster(Int32[], Int32, Int32, Int32)</a> to read TIFF image data. Details of doing this are a bit involved,
+it is best to make a copy of an existing get method and modify it to suit the needs of an
+application. To setup custom &quot;get&quot; method please use <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_Get">Get</a> property.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Alpha.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Alpha%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L607">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Alpha_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Alpha*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Alpha" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Alpha">Alpha</h4>
+  <div class="markdown level1 summary"><p>Gets the type of alpha data present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtraSample Alpha { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.ExtraSample.html">ExtraSample</a></td>
+        <td><p>The type of alpha data present.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_BitsPerSample.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.BitsPerSample%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L643">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_BitsPerSample_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.BitsPerSample*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_BitsPerSample" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.BitsPerSample">BitsPerSample</h4>
+  <div class="markdown level1 summary"><p>Gets the image bits per sample count.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short BitsPerSample { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><p>The image bits per sample count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Get.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L709">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Get_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Get*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Get" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Get">Get</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the &quot;get&quot; method (the method that is called to produce RGBA raster).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TiffRgbaImage.GetDelegate Get { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.GetDelegate.html">TiffRgbaImage.GetDelegate</a></td>
+        <td><p>The &quot;get&quot; method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Height.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Height%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L631">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Height_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Height*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Height" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Height">Height</h4>
+  <div class="markdown level1 summary"><p>Gets the image height.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Height { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The image height.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_IsContig.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.IsContig%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L595">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_IsContig_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.IsContig*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_IsContig" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.IsContig">IsContig</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether image data has contiguous (packed) or separated samples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsContig { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this image data has contiguous (packed) samples; otherwise,
+<code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Orientation.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Orientation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L667">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Orientation_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Orientation*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Orientation" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Orientation">Orientation</h4>
+  <div class="markdown level1 summary"><p>Gets the image orientation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Orientation Orientation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Orientation.html">Orientation</a></td>
+        <td><p>The image orientation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Photometric.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Photometric%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L697">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Photometric_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Photometric*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Photometric" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Photometric">Photometric</h4>
+  <div class="markdown level1 summary"><p>Gets the photometric interpretation of the image data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Photometric Photometric { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Photometric.html">Photometric</a></td>
+        <td><p>The photometric interpretation of the image data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_PutContig.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.PutContig%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L726">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_PutContig_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.PutContig*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_PutContig" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.PutContig">PutContig</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the &quot;put&quot; method (the method that is called to pack pixel data in the
+raster) used when converting contiguously packed samples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TiffRgbaImage.PutContigDelegate PutContig { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.PutContigDelegate.html">TiffRgbaImage.PutContigDelegate</a></td>
+        <td><p>The &quot;put&quot; method used when converting contiguously packed samples.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_PutSeparate.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.PutSeparate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L743">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_PutSeparate_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.PutSeparate*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_PutSeparate" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.PutSeparate">PutSeparate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the &quot;put&quot; method (the method that is called to pack pixel data in the
+raster) used when converting separated samples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TiffRgbaImage.PutSeparateDelegate PutSeparate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.PutSeparateDelegate.html">TiffRgbaImage.PutSeparateDelegate</a></td>
+        <td><p>The &quot;put&quot; method used when converting separated samples.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_ReqOrientation.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.ReqOrientation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L681">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_ReqOrientation_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.ReqOrientation*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_ReqOrientation" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.ReqOrientation">ReqOrientation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the requested orientation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Orientation ReqOrientation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Orientation.html">Orientation</a></td>
+        <td><p>The requested orientation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_ReqOrientation_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_">GetRaster(Int32[], Int32, Int32, Int32)</a> method uses this value when placing converted
+image data into raster buffer.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_SamplesPerPixel.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.SamplesPerPixel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L655">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_SamplesPerPixel_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.SamplesPerPixel*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_SamplesPerPixel" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.SamplesPerPixel">SamplesPerPixel</h4>
+  <div class="markdown level1 summary"><p>Gets the image samples per pixel count.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short SamplesPerPixel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><p>The image samples per pixel count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Width.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Width%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L619">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Width_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Width*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Width" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Width">Width</h4>
+  <div class="markdown level1 summary"><p>Gets the image width.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Width { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The image width.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_Create_BitMiracle_LibTiff_Classic_Tiff_System_Boolean_System_String__.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.Create(BitMiracle.LibTiff.Classic.Tiff%2CSystem.Boolean%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L305">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Create_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Create*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_Create_BitMiracle_LibTiff_Classic_Tiff_System_Boolean_System_String__" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.Create(BitMiracle.LibTiff.Classic.Tiff,System.Boolean,System.String@)">Create(Tiff, Boolean, out String)</h4>
+  <div class="markdown level1 summary"><p>Creates new instance of the <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html">TiffRgbaImage</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TiffRgbaImage Create(Tiff tif, bool stopOnError, out string errorMsg)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html">Tiff</a></td>
+        <td><span class="parametername">tif</span></td>
+        <td><p>The instance of the <a class="xref" href="BitMiracle.LibTiff.Classic.html">BitMiracle.LibTiff.Classic</a> class used to retrieve
+image data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">stopOnError</span></td>
+        <td><p>if set to <code>true</code> then an error will terminate the conversion; otherwise &quot;get&quot;
+methods will continue processing data until all the possible data in the image have
+been requested.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">errorMsg</span></td>
+        <td><p>The error message (if any) gets placed here.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html">TiffRgbaImage</a></td>
+        <td><p>New instance of the <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html">TiffRgbaImage</a> class if the image specified
+by <code data-dev-comment-type="paramref" class="paramref">tif</code> can be converted to RGBA format; otherwise, <code>null</code> is
+returned and <code data-dev-comment-type="paramref" class="paramref">errorMsg</code> contains the reason why it is being
+rejected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage.GetRaster(System.Int32%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L797">View Source</a>
+  </span>
+  <a id="BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.GetRaster*"></a>
+  <h4 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32_" data-uid="BitMiracle.LibTiff.Classic.TiffRgbaImage.GetRaster(System.Int32[],System.Int32,System.Int32,System.Int32)">GetRaster(Int32[], Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Reads the underlaying TIFF image and decodes it into RGBA format raster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetRaster(int[] raster, int offset, int width, int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td><span class="parametername">raster</span></td>
+        <td><p>The raster (the buffer to place decoded image data to).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The zero-based byte offset in <code data-dev-comment-type="paramref" class="paramref">raster</code> at which
+to begin storing decoded bytes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>The raster width.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The raster height.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the image was successfully read and decoded; otherwise,
+<code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="BitMiracle_LibTiff_Classic_TiffRgbaImage_GetRaster_System_Int32___System_Int32_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+<strong>GetRaster</strong> reads image into memory using current &quot;get&quot; (<a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_Get">Get</a>) method,
+storing the result in the user supplied RGBA <code data-dev-comment-type="paramref" class="paramref">raster</code> using one of
+the &quot;put&quot; (<a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_PutContig">PutContig</a> or <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_PutSeparate">PutSeparate</a>) methods. The raster
+is assumed to be an array of <code data-dev-comment-type="paramref" class="paramref">width</code> times <code data-dev-comment-type="paramref" class="paramref">height</code>
+32-bit entries, where <code data-dev-comment-type="paramref" class="paramref">width</code> must be less than or equal to the width
+of the image (<code data-dev-comment-type="paramref" class="paramref">height</code> may be any non-zero size). If the raster
+dimensions are smaller than the image, the image data is cropped to the raster bounds.
+If the raster height is greater than that of the image, then the image data placement
+depends on the value of <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_ReqOrientation">ReqOrientation</a> property. Note that the raster is
+assumed to be organized such that the pixel at location (x, y) is
+<code data-dev-comment-type="paramref" class="paramref">raster</code>[y * width + x]; with the raster origin specified by the
+value of <a class="xref" href="BitMiracle.LibTiff.Classic.TiffRgbaImage.html#BitMiracle_LibTiff_Classic_TiffRgbaImage_ReqOrientation">ReqOrientation</a> property.
+</p><p>
+Raster pixels are 8-bit packed red, green, blue, alpha samples. The 
+<a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetR_System_Int32_">GetR(Int32)</a>, <a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetG_System_Int32_">GetG(Int32)</a>, <a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetB_System_Int32_">GetB(Int32)</a>, and
+<a class="xref" href="BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetA_System_Int32_">GetA(Int32)</a> should be used to access individual samples. Images without
+Associated Alpha matting information have a constant Alpha of 1.0 (255).
+</p><p>
+<strong>GetRaster</strong> converts non-8-bit images by scaling sample values. Palette,
+grayscale, bilevel, CMYK, and YCbCr images are converted to RGB transparently.
+Raster pixels are returned uncorrected by any colorimetry information present in
+the directory.
+</p><p>
+Samples must be either 1, 2, 4, 8, or 16 bits. Colorimetric samples/pixel must be
+either 1, 3, or 4 (i.e. SamplesPerPixel minus ExtraSamples).
+</p><p>
+Palette image colormaps that appear to be incorrectly written as 8-bit values are
+automatically scaled to 16-bits.
+</p><p>
+All error messages are directed to the current error handler.
+</p></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/new/master/apiSpec/new?filename=BitMiracle_LibTiff_Classic_TiffRgbaImage.md&amp;value=---%0Auid%3A%20BitMiracle.LibTiff.Classic.TiffRgbaImage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/LibTiff/TiffRgbaImage.cs/#L48" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

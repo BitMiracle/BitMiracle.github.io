@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Auto-registered tags </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Auto-registered tags ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../fusion/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>The tags understood by LibTiff.Net, the number of parameter values, and the types for the values returned by <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetField_BitMiracle_LibTiff_Classic_TiffTag_">GetField(TiffTag)</a> and <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_GetFieldDefaulted_BitMiracle_LibTiff_Classic_TiffTag_">GetFieldDefaulted(TiffTag)</a> are shown below. </p>
+<p>The data types correspond to the types used to specify tag values to <a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.html#BitMiracle_LibTiff_Classic_Tiff_SetField_BitMiracle_LibTiff_Classic_TiffTag_System_Object___">SetField(TiffTag, Object[])</a>. Consult the TIFF specification (or relevant industry specification) for information on the meaning of each tag and their possible values. </p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Value count</th>
+<th>Type(s)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TiffTag.ARTIST</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.BADFAXLINES</td>
+<td>1</td>
+<td>System.Int32</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.BITSPERSAMPLE</td>
+<td>1</td>
+<td>System.Int16</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.CLEANFAXDATA</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.CleanFaxData.html">CleanFaxData</a></td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.COLORMAP</td>
+<td>3</td>
+<td>System.Int16[]</td>
+<td>Each arrays contains (1 &lt;&lt; BitsPerSample) elements</td>
+</tr>
+<tr>
+<td>TiffTag.COMPRESSION</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Compression.html">Compression</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.CONSECUTIVEBADFAXLINES</td>
+<td>1</td>
+<td>System.Int32</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.COPYRIGHT</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.DATATYPE</td>
+<td>1</td>
+<td>System.Int16</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.DATETIME</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.DOCUMENTNAME</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.DOTRANGE</td>
+<td>2</td>
+<td>System.Int16</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.EXTRASAMPLES 2</td>
+<td>System.Int16<br><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.ExtraSample.html">ExtraSample</a>[]</td>
+<td>count &amp; types array<br>Tag may not have its values changed once data is written to file/stream.</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.FAXFILLFUNC</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Tiff.FaxFillFunc.html">Tiff.FaxFillFunc</a></td>
+<td>G3/G4 compression pseudo-tag</td>
+</tr>
+<tr>
+<td>TiffTag.FAXMODE</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.FaxMode.html">FaxMode</a></td>
+<td>G3/G4 compression pseudo-tag<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.FILLORDER</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.FillOrder.html">FillOrder</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.GROUP3OPTIONS</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Group3Opt.html">Group3Opt</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.GROUP4OPTIONS</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Group3Opt.html">Group3Opt</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.HALFTONEHINTS</td>
+<td>2</td>
+<td>System.Int16</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.HOSTCOMPUTER</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.ICCPROFILE</td>
+<td>2</td>
+<td>System.Int32<br>System.Byte[]</td>
+<td>count, profile data.<br>The contents of this field is quite complex. See The ICC Profile Format Specification, Annex B.3 &quot;Embedding ICC Profiles in TIFF Files&quot; (available at <a href="http://www.color.org">http://www.color.org</a>) for an explanation.</td>
+</tr>
+<tr>
+<td>TiffTag.IMAGEDEPTH</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.IMAGEDESCRIPTION</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.IMAGELENGTH</td>
+<td>1</td>
+<td>System.Int32</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.IMAGEWIDTH</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.INKNAMES</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.INKSET</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.InkSet.html">InkSet</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.JPEGCOLORMODE</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.JpegColorMode.html">JpegColorMode</a></td>
+<td>JPEG pseudo-tag<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.JPEGQUALITY</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>JPEG pseudo-tag</td>
+</tr>
+<tr>
+<td>TiffTag.JPEGTABLES</td>
+<td>2</td>
+<td>System.Int32<br>System.Byte[]</td>
+<td>count &amp; tables<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.JPEGTABLESMODE</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.JpegTablesMode.html">JpegTablesMode</a></td>
+<td>JPEG pseudo-tag<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.MAKE</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MATTEING</td>
+<td>1</td>
+<td>System.Int16</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.MAXSAMPLEVALUE</td>
+<td>1</td>
+<td>System.Int16</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MINSAMPLEVALUE</td>
+<td>1</td>
+<td>System.Int16</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.MODEL</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.ORIENTATION</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Orientation.html">Orientation</a></td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.PAGENAME</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.PAGENUMBER</td>
+<td>2</td>
+<td>System.Int16</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.PHOTOMETRIC</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Photometric.html">Photometric</a></td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.PHOTOSHOP</td>
+<td>2</td>
+<td>System.Int32<br>System.Byte[]</td>
+<td>count, data</td>
+</tr>
+<tr>
+<td>TiffTag.PLANARCONFIG</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.PlanarConfig.html">PlanarConfig</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.PREDICTOR</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Predictor.html">Predictor</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.PRIMARYCHROMATICITIES</td>
+<td>1</td>
+<td>System.Single[]</td>
+<td>The array contains 6 elements</td>
+</tr>
+<tr>
+<td>TiffTag.REFERENCEBLACKWHITE</td>
+<td>1</td>
+<td>System.Single[]</td>
+<td>The array contains (2 * SamplesPerPixel) elements<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.RESOLUTIONUNIT</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.ResUnit.html">ResUnit</a></td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.RICHTIFFIPTC</td>
+<td>2</td>
+<td>System.Int32<br>System.Byte[]</td>
+<td>count, data</td>
+</tr>
+<tr>
+<td>TiffTag.ROWSPERSTRIP</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>must be &gt; 0<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.SAMPLEFORMAT</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.SampleFormat.html">SampleFormat</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.SAMPLESPERPIXEL</td>
+<td>1</td>
+<td>System.Int16</td>
+<td>must be &lt;= 4<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.SMAXSAMPLEVALUE</td>
+<td>1</td>
+<td>System.Double</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SMINSAMPLEVALUE</td>
+<td>1</td>
+<td>System.Double</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SOFTWARE</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.STONITS</td>
+<td>1</td>
+<td>System.Double[]</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.STRIPBYTECOUNTS</td>
+<td>1</td>
+<td>System.UInt32[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.STRIPOFFSETS</td>
+<td>1</td>
+<td>System.UInt32[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SUBFILETYPE</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.FileType.html">FileType</a></td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.SUBIFD</td>
+<td>2</td>
+<td>System.Int16<br>System.Int32[]</td>
+<td>count &amp; offsets array</td>
+</tr>
+<tr>
+<td>TiffTag.TARGETPRINTER</td>
+<td>1</td>
+<td>System.Byte[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.THRESHHOLDING</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.Threshold.html">Threshold</a></td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.TILEBYTECOUNTS</td>
+<td>1</td>
+<td>System.UInt32[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.TILEDEPTH</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.TILELENGTH</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>must be a multiple of 8<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.TILEOFFSETS</td>
+<td>1</td>
+<td>System.UInt32[]</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.TILEWIDTH</td>
+<td>1</td>
+<td>System.Int32</td>
+<td>must be a multiple of 8<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.TRANSFERFUNCTION</td>
+<td>1 or 3</td>
+<td>System.Int16[]</td>
+<td>Each array contains (1 &lt;&lt; BitsPerSample) elements<br>If SamplesPerPixel is one, then a single array is used; otherwise three arrays are used.<br>GetField returns three arrays (last 2 arrays can be null).</td>
+</tr>
+<tr>
+<td>TiffTag.WHITEPOINT</td>
+<td>1</td>
+<td>System.Single[]</td>
+<td>The array contains 2 elements</td>
+</tr>
+<tr>
+<td>TiffTag.XMLPACKET</td>
+<td>2</td>
+<td>System.Int32<br>System.Byte[]</td>
+<td>count, data</td>
+</tr>
+<tr>
+<td>TiffTag.XPOSITION</td>
+<td>1</td>
+<td>System.Single</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.XRESOLUTION</td>
+<td>1</td>
+<td>System.Single</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.YCBCRCOEFFICIENTS</td>
+<td>1</td>
+<td>System.Single[]</td>
+<td>The array contains 3 elements<br>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.YCBCRPOSITIONING</td>
+<td>1</td>
+<td><a class="xref" href="../../api/BitMiracle.LibTiff.Classic.YCbCrPosition.html">YCbCrPosition</a></td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.YCBCRSUBSAMPLING</td>
+<td>2</td>
+<td>System.Int16</td>
+<td>Tag may not have its values changed once data is written to file/stream.</td>
+</tr>
+<tr>
+<td>TiffTag.YPOSITION</td>
+<td>1</td>
+<td>System.Single</td>
+<td></td>
+</tr>
+<tr>
+<td>TiffTag.YRESOLUTION</td>
+<td>1</td>
+<td>System.Single</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="auto-registered-tags">Auto-registered tags</h2>
+<p>If you can’t find the tag in the table above that means this is unsupported tag. But you still be able to read it&#39;s value. You will need to know the data type of that tag to correctly interpret returned value(s), though. </p>
+<p>For example, if you want to read and print value(s) from the tag 50341 you can use the following code: </p>
+<pre><code class="lang-cs">using BitMiracle.LibTiff.Classic;
+
+namespace ReadAndPrintAutoRegisteredTag
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (Tiff image = Tiff.Open(args[0], &quot;r&quot;))
+            {
+                if (image == null)
+                    return;
+
+                // read auto-registered tag 50341
+                FieldValue[] value = image.GetField((TiffTag)50341);
+                System.Console.Out.WriteLine(&quot;Tag value(s) are as follows:&quot;);
+                for (int i = 0; i &lt; value.Length; i++)
+                    System.Console.Out.WriteLine(&quot;{0} : {1}&quot;, i, value[i].ToString());
+            }
+        }
+    }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BitMiracle/libtiff.net/blob/master/HelpSrc/articles/KB/well-known-tags.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
