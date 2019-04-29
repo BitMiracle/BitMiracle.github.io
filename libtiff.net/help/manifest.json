@@ -312,7 +312,7 @@
       "output": {
         ".html": {
           "relative_path": "api/BitMiracle.LibTiff.Classic.Tiff.html",
-          "hash": "L1m0YhAFaCi6Qs4WIW/31w=="
+          "hash": "k1wHLrzzzvB1QY3Q+tQM2w=="
         }
       },
       "is_incremental": false,
@@ -420,10 +420,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BitMiracle.LibTiff.Classic.TiffStream.html",
-          "hash": "JdffsL/lBl3sJ7O1keCXcw=="
+          "hash": "o5xsIkaM4S+hEkkZo61TUA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -767,10 +767,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/license.html",
-          "hash": "tJKWwko6DgQIzHb24TZmXg=="
+          "hash": "/mKNr857WOgzpEX9beAKig=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -802,6 +802,7 @@
     },
     {
       "log_codes": [
+        "InvalidYamlHeader",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -809,10 +810,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/welcome.html",
-          "hash": "FDQXMtACtkOxsPGfjtcRuQ=="
+          "hash": "+KOdX9OlhhJmN2QEacNPGQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -862,6 +863,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -873,11 +879,6 @@
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
-          "incrementalPhase": "build"
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
